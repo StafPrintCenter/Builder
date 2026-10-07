@@ -3,16 +3,16 @@ import { useMemo, useState } from "react";
 import { exportHtml } from "@/lib/builderRegistry";
 import { useProject } from "@/lib/projects";
 import { DEVICES, DeviceSwitch, type Device } from "@/components/DeviceSwitch";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/site";
 
 
 export const Route = createFileRoute("/preview")({
   validateSearch: (s: Record<string, unknown>) => ({ id: typeof s['id'] === "string" ? s['id'] : undefined }),
   head: () => ({
     meta: [
-      { title: "Aperçu plein écran — SPC Site Builder" },
+      { title: "Aperçu plein écran - SPC Site Builder" },
       { name: "description", content: "Prévisualisez votre page sur ordinateur, tablette et mobile." },
-      { property: "og:title", content: "Aperçu — SPC Site Builder" },
+      { property: "og:title", content: "Aperçu - SPC Site Builder" },
       { property: "og:description", content: "Aperçu responsive de votre landing page." },
     ],
   }),
