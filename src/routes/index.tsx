@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Code2, MonitorSmartphone, MousePointer2, RotateCcw, Save, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Code2, MonitorSmartphone, MousePointer2, RotateCcw, Save, ShieldCheck } from "lucide-react";
 import { BuilderShell } from "@/components/site";
-import { SiteBuilderIllustration } from "@/components/SiteBuilderIllustration";
 import { HeroSection } from "@/components/pages/home";
 import { TemplateCard } from "@/components/TemplateCard";
 import { Button } from "@/components/ui/button";
@@ -45,20 +44,6 @@ function Home() {
     <BuilderShell>
       <main className="flex-1">
         <HeroSection />
-        <section className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-12">
-          <div className="flex flex-col items-start text-left">
-
-
-            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <Button asChild size="lg"><Link to="/editor" search={{ id: undefined }}>Commencer une page vierge</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link to="/templates">Voir les modèles</Link></Button>
-              <Button asChild size="lg" variant="ghost"><Link to="/dashboard">Mes projets <ArrowRight /></Link></Button>
-            </div>
-            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-muted-foreground">
-              <span>{nBlocks} blocs</span><span>{nEls} éléments</span><span>{TEMPLATES.length} modèles</span>
-            </div>
-          </div>
-        </section>
 
         <section className="border-y bg-panel/45">
           <div className="mx-auto max-w-7xl px-6 py-20">
