@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { ArrowRight, FileUp, FolderOpen, LayoutGrid, Search } from "lucide-react";
-import { AppHeader, EcosystemBanner } from "@/components/AppHeader";
+import { BuilderShell } from "@/components/site";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -44,8 +44,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <AppHeader />
+    <BuilderShell>
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-12">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 border-b pb-8 sm:flex sm:flex-wrap sm:justify-between">
           <div className="min-w-0">
@@ -93,11 +92,12 @@ function Dashboard() {
           </div>
         )}
       </main>
-      <EcosystemBanner />
+
       <ConfirmDialog open={!!toDelete} onOpenChange={(o) => !o && setToDelete(null)}
         title="Supprimer ce projet ?"
         description={`« ${toDelete?.title ?? ""} » sera définitivement supprimé de ce navigateur. Pensez à l'exporter en .spcbuild si vous voulez le garder.`}
         onConfirm={() => { if (toDelete) deleteProject(toDelete.id); setToDelete(null); }} />
-    </div>
+      
+    </BuilderShell>
   );
 }
