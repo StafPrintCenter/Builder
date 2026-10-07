@@ -34,4 +34,5 @@ export const SITE_LINK = {
   aiUrl: import.meta.env.VITE_AI_URL,
   docsUrl: import.meta.env.VITE_DOCS_URL,
   roadmapUrl: import.meta.env.VITE_ROADMAP_URL,
+  roadmapUrl: import.meta.env.VITE_ROADMAP_URL,
 };
