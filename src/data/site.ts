@@ -24,46 +24,6 @@ export const SITE = {
   }
 };
 
-export const NAV = [
-  { to: "/", label: "Explorateur" },
-  { to: "/calendar", label: "Calendrier" },
-  { to: "/features", label: "Priorités" },
-  { to: "/changelog", label: "Changelog" },
-  { to: "/compare", label: "Comparer" },
-  { to: "/status", label: "Statut" },
-] as const;
-
-export const PAGE_META: Record<string, { title: string; subtitle: string }> = {
-  "/": {
-    title: "Explorateur de roadmap",
-    subtitle: `Tout ce que nous construisons pour l'écosystème ${SITE.name}.`,
-  },
-  "/calendar": {
-    title: "Calendrier & frise",
-    subtitle: "Échéances, jalons et livraisons trimestrielles par sous-domaine.",
-  },
-  "/features": {
-    title: "Priorités & analyses",
-    subtitle: "Chiffres clés du backlog et classement des fonctionnalités les plus votées.",
-  },
-  "/changelog": {
-    title: "Notes de version",
-    subtitle: "Historique des nouveautés, améliorations et correctifs déployés.",
-  },
-  "/compare": {
-    title: "Comparatif des plateformes",
-    subtitle: "Avancement, votes et échéances des sous-domaines, côte à côte.",
-  },
-  "/submit": {
-    title: "Proposer une idée",
-    subtitle: "Une suggestion, un bug ? Votre retour entre directement dans le backlog.",
-  },
-  "/status": {
-    title: "État des services",
-    subtitle: "Disponibilité en temps réel de chaque plateforme de l'écosystème.",
-  },
-};
-
 export const SITE_LINK = {
   landingUrl: import.meta.env.VITE_LANDING_URL,
   shortUrl: import.meta.env.VITE_SHORTSITE_URL,
