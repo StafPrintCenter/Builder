@@ -46,7 +46,8 @@ export function HeroSection() {
             Voir les modèles
           </Link>
         </div>
-        <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-muted-foreground">
+
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-muted-foreground">
           <span>{nBlocks} blocs</span><span>{nEls} éléments</span><span>{TEMPLATES.length} modèles</span>
         </div>
       </div>
