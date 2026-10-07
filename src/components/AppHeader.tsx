@@ -1,14 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+// import { ThemeToggle } from "./";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { SpcDeskLogo } from "@/components/site";
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-      <span className="grid h-7 w-7 place-items-center rounded-md bg-primary text-sm text-primary-foreground">S</span>
-      SPC <span className="text-muted-foreground font-medium">Site Builder</span>
+    <Link to="/" className="flex items-center">
+      <SpcDeskLogo className="mx-auto h-12 w-auto" />
     </Link>
   );
 }
@@ -17,11 +18,27 @@ export function AppHeader() {
   const link = "text-sm text-muted-foreground hover:text-foreground transition-colors";
   const links = (
     <>
-      <Link to="/" className={link} activeOptions={{ exact: true }} activeProps={{ className: "text-foreground" }}>Accueil</Link>
-      <Link to="/dashboard" className={link} activeProps={{ className: "text-foreground" }}>Projets</Link>
-      <Link to="/templates" className={link} activeProps={{ className: "text-foreground" }}>Modèles</Link>
-      <Link to="/cgu" className={link} activeProps={{ className: "text-foreground" }}>CGU</Link>
-      <Button asChild size="sm"><Link to="/editor" search={{ id: undefined }}>Page vierge</Link></Button>
+      <Link
+        to="/dashboard"
+        className={link}
+        activeProps={{ className: "text-foreground" }}
+      >
+        Projets
+      </Link>
+
+      <Link
+        to="/templates"
+        className={link}
+        activeProps={{ className: "text-foreground" }}>
+        Modèles
+      </Link>
+
+      <Button
+        asChild size="sm">
+        <Link to="/editor" search={{ id: undefined }}>
+          Page vierge
+        </Link>
+      </Button>
     </>
   );
   return (
@@ -30,8 +47,10 @@ export function AppHeader() {
         <div className="min-w-0"><Logo /></div>
         <nav className="hidden items-center gap-6 md:flex">
           {links}
+          <div className="mx-0.5 h-4 w-px bg-border/80" />
           <ThemeToggle />
         </nav>
+
         <div className="flex shrink-0 items-center md:hidden">
           <ThemeToggle />
           <Sheet>
