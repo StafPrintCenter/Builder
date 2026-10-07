@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Code2, MonitorSmartphone, MousePointer2, RotateCcw, Save, ShieldCheck, Sparkles } from "lucide-react";
 import { BuilderShell } from "@/components/site";
 import { SiteBuilderIllustration } from "@/components/SiteBuilderIllustration";
+import { HeroSection } from "@/components/pages/home";
 import { TemplateCard } from "@/components/TemplateCard";
 import { Button } from "@/components/ui/button";
 import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
@@ -43,11 +44,11 @@ function Home() {
   return (
     <BuilderShell>
       <main className="flex-1">
-        <section className="mx-auto grid min-h-[min(760px,calc(100vh-3.5rem))] max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <HeroSection />
+        <section className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-12">
           <div className="flex flex-col items-start text-left">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-[10px] font-bold uppercase text-primary"><Sparkles className="size-3" /> builder.stafprint.com</p>
-            <h1 className="mt-7 text-4xl font-medium leading-[1.08] sm:text-6xl">Construisez une <span className="font-bold text-primary">page pro</span>, exportez un code propre.</h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">SPC Site Builder est le constructeur visuel de STAF PRINT CENTER. Créez une landing page pour votre activité en quelques minutes, sans écrire une ligne de code.</p>
+
+
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Button asChild size="lg"><Link to="/editor" search={{ id: undefined }}>Commencer une page vierge</Link></Button>
               <Button asChild size="lg" variant="outline"><Link to="/templates">Voir les modèles</Link></Button>
@@ -57,7 +58,6 @@ function Home() {
               <span>{nBlocks} blocs</span><span>{nEls} éléments</span><span>{TEMPLATES.length} modèles</span>
             </div>
           </div>
-          <SiteBuilderIllustration />
         </section>
 
         <section className="border-y bg-panel/45">
