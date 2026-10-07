@@ -123,7 +123,9 @@ function Editor() {
     <div className="flex h-screen flex-col overflow-hidden">
       {/* Top bar */}
       <header className="flex h-14 shrink-0 items-center gap-4 border-b bg-panel px-4">
-        <SpcDeskLogo className="h-10" />
+        <Link to="/" className="flex items-center">
+          <SpcDeskLogo className="mx-auto h-10 w-auto" />
+        </Link>
         <input value={project.title} onChange={(e) => setProject({ ...project, title: e.target.value })}
           className="w-48 rounded-md border-foreground bg-foreground/20 px-2 py-1 font-display text-sm hover:border focus:border focus:outline-none" />
 
