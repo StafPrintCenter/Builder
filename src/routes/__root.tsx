@@ -58,8 +58,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          "@id": `${SITE_LINK.roadmapUrl}/#webapp`,
-          url: SITE_LINK.roadmapUrl,
+          "@id": `${SITE_LINK.builderUrl}/#webapp`,
+          url: SITE_LINK.builderUrl,
           name: `${SITE.tool}`,
           applicationCategory: "BusinessApplication",
           operatingSystem: "All",
