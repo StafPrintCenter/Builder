@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { PageHeader, PageFooter, CommandPalette, CookieConsent } from ".";
+import { PageHeader, PageFooter, CookieConsent } from ".";
 
 export function RoadmapShell({ children }: { children: ReactNode }) {
   return (
