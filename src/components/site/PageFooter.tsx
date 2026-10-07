@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { SITE, SITE_LINK } from "@/data/site";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon, WhatsAppIcon } from "@/components/site/icons";
 
@@ -34,6 +35,15 @@ export function PageFooter() {
             aria-label="Navigation secondaire"
             className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground"
           >
+            <Link
+              to="/cgu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 transition-colors hover:text-primary"
+            >
+              Conditions d'Utilisation
+            </Link>
+
             <a
               href={SITE_LINK.docsUrl}
               target="_blank"
