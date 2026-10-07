@@ -12,9 +12,9 @@ export const Route = createFileRoute("/editor")({
   validateSearch: (s: Record<string, unknown>) => ({ id: typeof s['id'] === "string" ? s['id'] : undefined }),
   head: () => ({
     meta: [
-      { title: "Éditeur — SPC Site Builder" },
+      { title: "Éditeur - SPC Site Builder" },
       { name: "description", content: "Glissez vos blocs, éditez vos textes et ajustez vos styles en direct." },
-      { property: "og:title", content: "Éditeur — SPC Site Builder" },
+      { property: "og:title", content: "Éditeur - SPC Site Builder" },
       { property: "og:description", content: "Éditeur visuel 3 panneaux de STAF PRINT CENTER." },
     ],
   }),
