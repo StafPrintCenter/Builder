@@ -40,7 +40,7 @@ export function HeroSection() {
           </Link>
           <Link
             to="/templates"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/50 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary  /50 sm:w-auto"
           >
             <LifeBuoy className="size-4 text-primary" />
             Voir les modèles
