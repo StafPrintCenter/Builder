@@ -1,72 +1,64 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import { ThemeToggle } from "@/components/site/ThemeToggle";
-
+import { Link } from "@tanstack/react-router";
+import { Menu } from "lucide-react";
+import { ThemeToggle } from "./";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { SpcDeskLogo } from "@/components/site";
 
-export function PageHeader() {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const [open, setOpen] = useState(false);
-  const meta = PAGE_META[pathname] ?? {
-    title: "Détail de la fonctionnalité",
-    subtitle: "Suivi détaillé, votes et échanges autour de cette évolution.",
-  };
-
+export function Logo() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6">
-        <div className="flex min-w-0 items-center gap-3">
-          <Link to="/" className="flex min-w-0 items-center gap-2.5">
-            <SpcDeskLogo className="mx-auto h-12 w-auto" />
-          </Link>
-          <nav className="ml-4 hidden items-center gap-1 lg:flex">
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                activeOptions={{ exact: item.to === "/" }}
-                activeProps={{ className: "bg-secondary text-foreground" }}
-                inactiveProps={{ className: "text-muted-foreground hover:text-foreground" }}
-                className="rounded-lg px-3 py-2 text-sm font-medium transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+    <Link to="/" className="flex items-center">
+      <SpcDeskLogo className="mx-auto h-12 w-auto" />
+    </Link>
+  );
+}
 
-        <div className="flex shrink-0 items-center gap-2">
-          <Link
-            to="/submit"
-            className="hidden rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-deep sm:inline-flex"
-          >
-            Proposer une idée
-          </Link>
+export function PageHeader() {
+  const link = "text-sm text-muted-foreground hover:text-foreground transition-colors";
+  const links = (
+    <>
+      <Link
+        to="/dashboard"
+        className={link}
+        activeProps={{ className: "text-foreground" }}
+      >
+        Projets
+      </Link>
+
+      <Link
+        to="/templates"
+        className={link}
+        activeProps={{ className: "text-foreground" }}>
+        Modèles
+      </Link>
+
+      <Button
+        asChild size="sm">
+        <Link to="/editor" search={{ id: undefined }}>
+          Page vierge
+        </Link>
+      </Button>
+    </>
+  );
+  return (
+    <header className="sticky top-0 z-20 border-b bg-panel/90 backdrop-blur">
+      <div className="mx-auto grid h-14 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-4 sm:px-6">
+        <div className="min-w-0"><Logo /></div>
+        <nav className="hidden items-center gap-6 md:flex">
+          {links}
+          <div className="mx-0.5 h-4 w-px bg-border/80" />
           <ThemeToggle />
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            className="grid size-10 place-items-center rounded-xl border border-border bg-card lg:hidden"
-          >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
-          </button>
-        </div>
-      </div>
-
-      {open && (
-        <nav className="border-t border-border bg-background px-4 py-3 lg:hidden">
-          <div className="flex flex-col gap-1">
-
-          </div>
         </nav>
-      )}
 
-      <div className="border-t border-border bg-surface/60">
-        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
-          <h1 className="truncate text-base font-bold sm:text-lg">{meta.title}</h1>
-          <p className="truncate text-xs text-muted-foreground sm:text-sm">{meta.subtitle}</p>
+        <div className="flex shrink-0 items-center md:hidden">
+          <ThemeToggle />
+          <Sheet>
+            <SheetTrigger asChild><Button variant="ghost" size="icon" aria-label="Ouvrir la navigation"><Menu /></Button></SheetTrigger>
+            <SheetContent className="flex w-72 flex-col gap-6 p-6">
+              <SheetTitle>Navigation</SheetTitle>
+              <nav className="flex flex-col items-start gap-5">{links}</nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
