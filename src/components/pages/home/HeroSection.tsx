@@ -9,7 +9,7 @@ export function HeroSection() {
   const nEls = BLOCKS.length - nBlocks;
 
   return (
-    <section className="relative mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-10">
+    <section className="relative mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-8 lg:grid-cols-2 lg:items-center lg:gap-10">
       <div className="flex flex-col items-start text-left">
         <a
           href={SITE_LINK.landingUrl}
