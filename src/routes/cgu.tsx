@@ -4,9 +4,9 @@ import { BuilderShell } from "@/components/site";
 export const Route = createFileRoute("/cgu")({
   head: () => ({
     meta: [
-      { title: "Conditions Générales d'Utilisation — SPC Site Builder" },
+      { title: "Conditions Générales d'Utilisation - SPC Site Builder" },
       { name: "description", content: "Conditions Générales d'Utilisation de SPC Site Builder, service édité par STAF PRINT CENTER." },
-      { property: "og:title", content: "Conditions Générales d'Utilisation — SPC Site Builder" },
+      { property: "og:title", content: "Conditions Générales d'Utilisation - SPC Site Builder" },
       { property: "og:description", content: "Conditions d'utilisation de la plateforme SPC Site Builder." },
     ],
   }),
@@ -193,7 +193,7 @@ function Cgu() {
 
         <Section title="14. Contact">
           <p>
-            Éditeur : STAF PRINT CENTER — [adresse complète à compléter], Bénin.
+            Éditeur : STAF PRINT CENTER - [adresse complète à compléter], Bénin.
           </p>
           <p>
             Contact : [adresse e-mail à compléter] · [numéro de téléphone à compléter].
