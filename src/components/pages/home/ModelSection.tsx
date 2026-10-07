@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Code2, MonitorSmartphone, MousePointer2, RotateCcw, Save, ShieldCheck } from "lucide-react";
 import { TemplateCard } from "@/components/TemplateCard";
 import { Button } from "@/components/ui/button";
-import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
+import { TEMPLATES } from "@/lib/builderRegistry";
 
 const STEPS = [
   { n: "01", t: "Choisissez un point de départ", d: "Un modèle prêt à l'emploi ou une page vierge." },
@@ -23,34 +23,6 @@ const FEATURES = [
 export function WhySection() {
   return (
     <div>
-      <section className="border-y bg-panel/45">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="flex items-center gap-5"><h2 className="font-mono text-xs font-semibold uppercase text-muted-foreground">Comment ça marche</h2><span className="h-px flex-1 bg-border" /></div>
-          <div className="mt-10 grid gap-4 md:grid-cols-4">
-            {STEPS.map((s) => (
-              <div key={s.n} className="group rounded-lg border bg-background/40 p-6 transition hover:border-primary/40">
-                <p className="font-display text-4xl font-bold text-muted transition group-hover:text-primary/30">{s.n}</p>
-                <p className="mt-4 font-display font-semibold">{s.t}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="flex items-center gap-5"><h2 className="font-mono text-xs font-semibold uppercase text-muted-foreground">Pourquoi SPC Site Builder</h2><span className="h-px flex-1 bg-border" /></div>
-        <div className="mt-10 grid overflow-hidden rounded-lg border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map(({ icon: Icon, ...f }) => (
-            <div key={f.t} className="bg-background p-7 transition hover:bg-card">
-              <Icon className="size-5 text-primary" />
-              <p className="mt-5 font-display text-lg font-semibold">{f.t}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="border-t bg-panel/45">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="flex flex-wrap items-end justify-between gap-4">
