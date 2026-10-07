@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { SpcMobLogo } from "@/components/site";
+import { SpcDeskLogo } from "@/components/site";
 import { DEVICES, DeviceSwitch, type Device } from "@/components/DeviceSwitch";
 import { ThemeToggle } from "@/components/site";
 import { BLOCKS, CATEGORY_META, getBlock, makeInstance, renderBlockInner, sectionStyle, uid, type BlockCategory, type BlockInstance, type ProjectState } from "@/lib/builderRegistry";
@@ -123,9 +123,11 @@ function Editor() {
     <div className="flex h-screen flex-col overflow-hidden">
       {/* Top bar */}
       <header className="flex h-14 shrink-0 items-center gap-4 border-b bg-panel px-4">
-        <SpcMobLogo />
+        <SpcDeskLogo className="h-10" />
         <input value={project.title} onChange={(e) => setProject({ ...project, title: e.target.value })}
-          className="w-48 rounded-md border-transparent bg-transparent px-2 py-1 font-display text-sm hover:border focus:border focus:outline-none" />
+          className="w-48 rounded-md border-foreground bg-foreground/20 px-2 py-1 font-display text-sm hover:border focus:border focus:outline-none" />
+
+
         <span className="font-mono text-[10px] text-muted-foreground">{saved ? "● enregistré" : "○ enregistrement…"}</span>
         <div className="mx-auto"><DeviceSwitch value={device} onChange={setDevice} /></div>
         <div className="flex items-center gap-1">
