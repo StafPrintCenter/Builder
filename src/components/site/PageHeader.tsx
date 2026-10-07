@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
-import { NAV, PAGE_META } from "@/data/site";
+
 import { SpcDeskLogo } from "@/components/site";
 
 export function PageHeader() {
@@ -58,19 +58,7 @@ export function PageHeader() {
       {open && (
         <nav className="border-t border-border bg-background px-4 py-3 lg:hidden">
           <div className="flex flex-col gap-1">
-            {[...NAV, { to: "/submit", label: "Proposer une idée" } as const].map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                activeOptions={{ exact: item.to === "/" }}
-                activeProps={{ className: "bg-secondary text-foreground" }}
-                inactiveProps={{ className: "text-muted-foreground" }}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium"
-              >
-                {item.label}
-              </Link>
-            ))}
+
           </div>
         </nav>
       )}
