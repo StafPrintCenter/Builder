@@ -26,7 +26,7 @@ export function TemplateCard({ template }: { template: TemplatePreset }) {
 
   return (
     <article className="group overflow-hidden rounded-lg border bg-card transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-2xl">
-      <div className="relative aspect-[16/10] overflow-hidden border-b bg-muted">
+      <div className="relative aspect-16/10 overflow-hidden border-b bg-muted">
         {isBlank ? (
           <div className="grid h-full place-items-center grid-bg">
             <div className="text-center">
@@ -69,7 +69,7 @@ export function TemplateCard({ template }: { template: TemplatePreset }) {
             <iframe
               title={`Prévisualisation de ${template.name} sur ${device}`}
               srcDoc={html}
-              className={`mx-auto h-full max-w-full rounded-md bg-canvas shadow-2xl transition-[width] duration-300 ${device === "mobile" ? "w-[375px]" : device === "tablet" ? "w-[768px]" : "w-full max-w-5xl"}`}
+              className={`mx-auto h-full max-w-full rounded-md bg-canvas shadow-2xl transition-[width] duration-300 ${device === "mobile" ? "w-93.75" : device === "tablet" ? "w-3xl" : "w-full max-w-5xl"}`}
             />
           </div>
           <div className="flex justify-end gap-2 border-t p-4">
