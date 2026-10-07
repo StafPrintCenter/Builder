@@ -11,9 +11,9 @@ import { deleteProject, importProject, useProjects } from "@/lib/projects";
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Mes projets — SPC Site Builder" },
+      { title: "Mes projets - SPC Site Builder" },
       { name: "description", content: "Retrouvez, modifiez, exportez ou supprimez vos landing pages enregistrées." },
-      { property: "og:title", content: "Mes projets — SPC Site Builder" },
+      { property: "og:title", content: "Mes projets - SPC Site Builder" },
       { property: "og:description", content: "Tableau de bord de vos pages enregistrées dans le navigateur." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -97,7 +97,7 @@ function Dashboard() {
         title="Supprimer ce projet ?"
         description={`« ${toDelete?.title ?? ""} » sera définitivement supprimé de ce navigateur. Pensez à l'exporter en .spcbuild si vous voulez le garder.`}
         onConfirm={() => { if (toDelete) deleteProject(toDelete.id); setToDelete(null); }} />
-      
+
     </BuilderShell>
   );
 }
