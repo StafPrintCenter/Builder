@@ -1,7 +1,7 @@
 {
-  "mc": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/ROADMAP-MC.png",
-  "mw": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/ROADMAP-MW.png",
-  "dc": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/ROADMAP-DC.png",
-  "dw": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/ROADMAP-DW.png",
+  "mc": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/BUILDER-MC.png",
+  "mw": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/BUILDER-MW.png",
+  "dc": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/BUILDER-DC.png",
+  "dw": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Logos/BUILDER-DW.png",
   "meta": "https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Other/meta.avif"
 }
