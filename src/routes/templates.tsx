@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LayoutGrid, Sparkles } from "lucide-react";
-import { AppHeader, EcosystemBanner } from "@/components/AppHeader";
+import { BuilderShell } from "@/components/site";
 import { TemplateCard } from "@/components/TemplateCard";
 import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
 
@@ -20,8 +20,7 @@ export const Route = createFileRoute("/templates")({
 
 function Templates() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <AppHeader />
+    <BuilderShell>
       <main className="w-full flex-1">
         <section className="border-b bg-panel/45">
           <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
@@ -36,7 +35,6 @@ function Templates() {
           <div className="mt-8 grid gap-7 md:grid-cols-2">{TEMPLATES.map((t) => <TemplateCard key={t.id} template={t} />)}</div>
         </section>
       </main>
-      <EcosystemBanner />
-    </div>
+    </BuilderShell>
   );
 }
