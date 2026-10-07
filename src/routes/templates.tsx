@@ -7,9 +7,9 @@ import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
 export const Route = createFileRoute("/templates")({
   head: () => ({
     meta: [
-      { title: "Modèles SPC — SPC Site Builder" },
+      { title: "Modèles SPC - SPC Site Builder" },
       { name: "description", content: "Galerie de modèles de landing pages pré-construits par STAF PRINT CENTER." },
-      { property: "og:title", content: "Modèles SPC — SPC Site Builder" },
+      { property: "og:title", content: "Modèles SPC - SPC Site Builder" },
       { property: "og:description", content: "Choisissez un modèle et personnalisez-le en quelques minutes." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
