@@ -33,16 +33,16 @@ export function HeroSection() {
         <div className="mt-8 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
           <Link
             to="/dashboard"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-brand-foreground shadow-sm transition-transform hover:-translate-y-0.5 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 sm:w-auto"
           >
             <BookOpen className="size-4" />
             Mes projets
           </Link>
           <Link
             to="/templates"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-brand/50 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/50 sm:w-auto"
           >
-            <LifeBuoy className="size-4 text-brand" />
+            <LifeBuoy className="size-4 text-primary" />
             Voir les modèles
           </Link>
         </div>
