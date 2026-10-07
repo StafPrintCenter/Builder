@@ -15,10 +15,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SPC Site Builder" },
-      { name: "description", content: "Constructeur visuel de landing pages par STAF PRINT CENTER." },
-      { name: "author", content: "STAF PRINT CENTER" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { name: "author", content: `${SITE.manager}` },
+
+      /* Open Graph / Facebook / WhatsApp */
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: `${SITE.tool} - ${SITE.name}` },
       { property: "og:image", content: `${logo.meta}` },
