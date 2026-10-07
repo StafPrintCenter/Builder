@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import JSZip from "jszip";
-import { AppHeader, EcosystemBanner } from "@/components/AppHeader";
+import { BuilderShell, PageHeader } from "@/components/site";
 import { exportHtml } from "@/lib/builderRegistry";
 import { download, slug, useProject } from "@/lib/projects";
 
@@ -29,7 +29,7 @@ function CodeExport() {
   if (p === undefined) return null;
   if (p === null)
     return (
-      <div className="flex min-h-screen flex-col"><AppHeader />
+      <div className="flex min-h-screen flex-col"><PageHeader />
         <p className="p-20 text-center text-muted-foreground">Projet introuvable. <Link to="/" className="text-primary">Retour</Link></p>
       </div>
     );
@@ -46,8 +46,7 @@ function CodeExport() {
   const btn = "rounded-md border px-3 py-2 text-sm hover:bg-accent";
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <AppHeader />
+    <BuilderShell>
       <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -68,7 +67,6 @@ function CodeExport() {
         </div>
         <pre className="mt-0 max-h-[65vh] overflow-auto rounded-b-lg bg-panel p-5 font-mono text-xs leading-relaxed text-muted-foreground"><code>{code}</code></pre>
       </main>
-      <EcosystemBanner />
-    </div>
+    </BuilderShell>
   );
 }
