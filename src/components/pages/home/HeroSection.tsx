@@ -2,9 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { BookOpen, LifeBuoy } from "lucide-react";
 import { SITE, SITE_LINK } from "@/data/site";
 import { SiteBuilderIllustration } from "./SiteBuilderIllustration";
+import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
 
 export function HeroSection() {
-  const docUrl = `${SITE_LINK.docsUrl}/docs/landing/demander-un-devis`;
+  const nBlocks = BLOCKS.filter((b) => b.category !== "element").length;
+  const nEls = BLOCKS.length - nBlocks;
 
   return (
     <section className="relative mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-16 lg:grid-cols-2 lg:items-center lg:gap-10">
@@ -43,6 +45,9 @@ export function HeroSection() {
             <LifeBuoy className="size-4 text-brand" />
             Voir les modèles
           </Link>
+        </div>
+        <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-muted-foreground">
+          <span>{nBlocks} blocs</span><span>{nEls} éléments</span><span>{TEMPLATES.length} modèles</span>
         </div>
       </div>
 
