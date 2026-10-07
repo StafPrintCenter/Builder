@@ -1,6 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, Search, X } from "lucide-react";
-import { openCommandPalette } from "./CommandPalette";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
 import { NAV, PAGE_META } from "@/data/site";
@@ -44,15 +43,6 @@ export function PageHeader() {
           >
             Proposer une idée
           </Link>
-          <button
-            type="button"
-            onClick={openCommandPalette}
-            aria-label="Recherche globale"
-            className="flex h-10 items-center gap-2 rounded-xl border border-border bg-card px-3 text-xs text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Search className="size-4" />
-            <kbd className="hidden font-mono text-[10px] md:inline">Ctrl K</kbd>
-          </button>
           <ThemeToggle />
           <button
             type="button"
