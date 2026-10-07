@@ -49,6 +49,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
+    ],
+    scripts: [
+      /* Schéma WebApplication pour l'outil de roadmap */
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "@id": `${SITE_LINK.roadmapUrl}/#webapp`,
+          url: SITE_LINK.roadmapUrl,
+          name: `${SITE.tool}`,
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "All",
+          description: PAGE_DESC,
+          inLanguage: "fr-BJ",
+          publisher: {
+            "@type": "Organization",
+            name: SITE.name,
+            logo: { "@type": "ImageObject", url: `${logo.meta}` }
+          }
+        }),
+      }
     ],
   }),
   shellComponent: RootShell,
