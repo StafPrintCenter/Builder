@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { PageHeader, PageFooter, CookieConsent } from ".";
 
-export function RoadmapShell({ children }: { children: ReactNode }) {
+export function BuilderShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <PageHeader />
