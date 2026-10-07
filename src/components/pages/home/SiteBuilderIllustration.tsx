@@ -34,9 +34,9 @@ export function SiteBuilderIllustration() {
           </aside>
 
           <div className="grid-bg relative overflow-hidden bg-muted p-3 sm:p-5">
-            <div className="mx-auto h-full max-w-xs overflow-hidden rounded border bg-canvas text-left text-background shadow-xl">
+            <div className="mx-auto h-full max-w-xs overflow-hidden rounded border bg-foreground text-left text-background shadow-xl">
               <div className="flex items-center justify-between px-4 py-3">
-                <span className="text-[8px] font-bold">NOVA STUDIO</span>
+                <span className="text-[8px] font-bold">SPC BUILDER</span>
                 <div className="flex gap-2 text-[6px] opacity-50"><span>Services</span><span>Contact</span></div>
               </div>
               <div className="grid grid-cols-[1.1fr_.9fr] items-center gap-3 px-4 py-6">
