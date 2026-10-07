@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -97,13 +97,22 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
 }
 
 @utility grid-bg {
@@ -112,6 +121,16 @@
 }
 
 /* Editable fields inside the canvas */
-.spc-canvas [contenteditable="true"] { outline: none; border-radius: 2px; cursor: text; }
-.spc-canvas [contenteditable="true"]:hover { box-shadow: 0 0 0 1px color-mix(in oklab, var(--primary) 60%, transparent); }
-.spc-canvas [contenteditable="true"]:focus { box-shadow: 0 0 0 2px var(--primary); }
+.spc-canvas [contenteditable="true"] {
+  outline: none;
+  border-radius: 2px;
+  cursor: text;
+}
+
+.spc-canvas [contenteditable="true"]:hover {
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--primary) 60%, transparent);
+}
+
+.spc-canvas [contenteditable="true"]:focus {
+  box-shadow: 0 0 0 2px var(--primary);
+}
