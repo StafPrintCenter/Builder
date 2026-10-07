@@ -127,7 +127,6 @@ function Editor() {
         <input value={project.title} onChange={(e) => setProject({ ...project, title: e.target.value })}
           className="w-48 rounded-md border-foreground bg-foreground/20 px-2 py-1 font-display text-sm hover:border focus:border focus:outline-none" />
 
-
         <span className="font-mono text-[10px] text-muted-foreground">{saved ? "● enregistré" : "○ enregistrement…"}</span>
         <div className="mx-auto"><DeviceSwitch value={device} onChange={setDevice} /></div>
         <div className="flex items-center gap-1">
