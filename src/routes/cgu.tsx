@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AppHeader, EcosystemBanner } from "@/components/AppHeader";
+import { BuilderShell } from "@/components/site";
 
 export const Route = createFileRoute("/cgu")({
   head: () => ({
@@ -24,8 +24,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function Cgu() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <AppHeader />
+    <BuilderShell>
       <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-12">
         <h1 className="text-3xl font-bold text-foreground">Conditions Générales d'Utilisation</h1>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -204,7 +203,6 @@ function Cgu() {
           </p>
         </Section>
       </main>
-      <EcosystemBanner />
-    </div>
+    </BuilderShell>
   );
 }
