@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Cookie } from "lucide-react";
 import { SITE_LINK } from "@/data/site";
 
-const STORAGE_KEY = "spc_roadmap_cookie_consent_v1";
+const STORAGE_KEY = "spc_builder_cookie_consent_v1";
 const GA_ID = "G-2N5DXSES7M";
 
 type Consent = "accepted" | "declined";
