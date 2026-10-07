@@ -332,7 +332,7 @@ function EXTRA_BLOCKS(): BlockSchema[] {
       `<div class="max-w-5xl mx-auto px-6"><a href="{{ctaUrl}}" target="{{ctaTarget}}" rel="noopener" data-field="ctaText" style="${btn}">{{ctaText}}</a></div>`),
     el("el-image", "Image", "Image pleine largeur", { imageUrl: IMG("spc-el"), alt: "Description de l'image" },
       `<div class="max-w-5xl mx-auto px-6"><img data-img="imageUrl" src="{{imageUrl}}" alt="{{alt}}" class="w-full rounded-2xl object-cover" /></div>`),
-    el("el-quote", "Citation", "Texte mis en avant", { body: "« La qualité n'est jamais un accident. »", author: "— John Ruskin" },
+    el("el-quote", "Citation", "Texte mis en avant", { body: "« La qualité n'est jamais un accident. »", author: "- John Ruskin" },
       `<div class="max-w-3xl mx-auto px-6"><blockquote style="border-left:4px solid var(--a);padding-left:20px"><p data-field="body" class="text-2xl italic">{{body}}</p><p data-field="author" class="mt-3 opacity-60">{{author}}</p></blockquote></div>`),
     el("el-list", "Liste", "3 points à puces", { i1: "Premier avantage", i2: "Deuxième avantage", i3: "Troisième avantage" },
       `<div class="max-w-3xl mx-auto px-6"><ul class="grid gap-3 text-lg" style="list-style:none;padding:0">${[1, 2, 3].map((n) => `<li style="display:flex;gap:12px;align-items:center"><span style="color:var(--a);font-weight:700">✓</span><span data-field="i${n}">{{i${n}}}</span></li>`).join("")}</ul></div>`),
