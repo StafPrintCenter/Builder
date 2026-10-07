@@ -78,7 +78,7 @@ export const BLOCKS: BlockSchema[] = [
     <p data-field="body" class="mt-6 text-lg opacity-75">{{body}}</p>
     <a href="{{ctaUrl}}" target="{{ctaTarget}}" rel="noopener" data-field="ctaText" class="mt-8" style="${btn}">{{ctaText}}</a>
   </div>
-  <img data-img="imageUrl" src="{{imageUrl}}" alt="" class="w-full rounded-2xl object-cover aspect-[4/3]" />
+  <img data-img="imageUrl" src="{{imageUrl}}" alt="" class="w-full rounded-2xl object-cover aspect-4/3" />
 </div>`,
   },
   {
@@ -352,7 +352,7 @@ function EXTRA_BLOCKS(): BlockSchema[] {
     el("el-two-cols", "Deux colonnes", "Texte sur 2 colonnes", { c1: "Première colonne de texte.", c2: "Deuxième colonne de texte." },
       `<div class="max-w-5xl mx-auto px-6 grid gap-8 @2xl:grid-cols-2"><p data-field="c1" class="opacity-80">{{c1}}</p><p data-field="c2" class="opacity-80">{{c2}}</p></div>`),
     el("el-image-text", "Image + texte", "Image à gauche, texte à droite", { imageUrl: IMG("spc-it"), title: "Titre", body: "Un court texte d'explication à côté de l'image." },
-      `<div class="max-w-5xl mx-auto px-6 grid gap-8 items-center @2xl:grid-cols-2"><img data-img="imageUrl" src="{{imageUrl}}" alt="" class="w-full rounded-2xl object-cover aspect-[4/3]" /><div><h3 data-field="title" class="text-2xl font-bold">{{title}}</h3><p data-field="body" class="mt-3 opacity-75">{{body}}</p></div></div>`),
+      `<div class="max-w-5xl mx-auto px-6 grid gap-8 items-center @2xl:grid-cols-2"><img data-img="imageUrl" src="{{imageUrl}}" alt="" class="w-full rounded-2xl object-cover aspect-4/3" /><div><h3 data-field="title" class="text-2xl font-bold">{{title}}</h3><p data-field="body" class="mt-3 opacity-75">{{body}}</p></div></div>`),
     el("el-card", "Carte", "Encadré titre + texte", { title: "Titre de la carte", body: "Texte de la carte." },
       `<div class="max-w-md mx-auto px-6"><div class="p-7 rounded-2xl" style="border:1px solid rgba(0,0,0,.1)"><div style="width:40px;height:4px;background:var(--a);border-radius:4px"></div><h3 data-field="title" class="mt-4 text-xl font-semibold">{{title}}</h3><p data-field="body" class="mt-2 opacity-70">{{body}}</p></div></div>`),
     el("el-alert", "Encadré info", "Message mis en valeur", { body: "ℹ️ Information importante pour vos visiteurs." },
