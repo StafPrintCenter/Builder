@@ -1,13 +1,10 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Logo } from "@/components/AppHeader";
+import { SpcMobLogo } from "@/components/site";
 import { DEVICES, DeviceSwitch, type Device } from "@/components/DeviceSwitch";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import {
-  BLOCKS, CATEGORY_META, getBlock, makeInstance, renderBlockInner, sectionStyle, uid,
-  type BlockCategory, type BlockInstance, type ProjectState,
-} from "@/lib/builderRegistry";
+import { ThemeToggle } from "@/components/site";
+import { BLOCKS, CATEGORY_META, getBlock, makeInstance, renderBlockInner, sectionStyle, uid, type BlockCategory, type BlockInstance, type ProjectState } from "@/lib/builderRegistry";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { createProject, getProject, saveProject } from "@/lib/projects";
 
@@ -101,7 +98,7 @@ function Editor() {
 
   const move = (i: number, dir: -1 | 1) => commit((bs) => {
     const j = i + dir; if (j < 0 || j >= bs.length) return bs;
-    const n = [...bs]; [n[i], n[j]] = [n[j]!, n[i]!]; return n;
+    const n = [...bs];[n[i], n[j]] = [n[j]!, n[i]!]; return n;
   });
 
   const onDrop = (e: React.DragEvent) => {
@@ -126,7 +123,7 @@ function Editor() {
     <div className="flex h-screen flex-col overflow-hidden">
       {/* Top bar */}
       <header className="flex h-14 shrink-0 items-center gap-4 border-b bg-panel px-4">
-        <Logo />
+        <SpcMobLogo />
         <input value={project.title} onChange={(e) => setProject({ ...project, title: e.target.value })}
           className="w-48 rounded-md border-transparent bg-transparent px-2 py-1 font-display text-sm hover:border focus:border focus:outline-none" />
         <span className="font-mono text-[10px] text-muted-foreground">{saved ? "● enregistré" : "○ enregistrement…"}</span>
