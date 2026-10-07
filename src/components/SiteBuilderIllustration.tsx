@@ -47,7 +47,7 @@ export function SiteBuilderIllustration() {
                   <div className="mt-1 h-1.5 w-4/5 rounded bg-background/15" />
                   <div className="mt-4 inline-flex rounded bg-primary px-3 py-1.5 text-[7px] font-bold text-primary-foreground">Démarrer</div>
                 </div>
-                <div className="aspect-[4/3] rounded bg-background/10 p-2">
+                <div className="aspect-4/3 rounded bg-background/10 p-2">
                   <div className="grid h-full grid-cols-2 gap-1">
                     <div className="rounded bg-primary/80" />
                     <div className="grid gap-1"><div className="rounded bg-badge-service/70" /><div className="rounded bg-background/20" /></div>
