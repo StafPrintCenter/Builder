@@ -63,16 +63,16 @@ function Home() {
 
         <section className="border-y bg-panel/45">
           <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="flex items-center gap-5"><h2 className="font-mono text-xs font-semibold uppercase text-muted-foreground">Comment ça marche</h2><span className="h-px flex-1 bg-border" /></div>
-          <div className="mt-10 grid gap-4 md:grid-cols-4">
-            {STEPS.map((s) => (
-              <div key={s.n} className="group rounded-lg border bg-background/40 p-6 transition hover:border-primary/40">
-                <p className="font-display text-4xl font-bold text-muted transition group-hover:text-primary/30">{s.n}</p>
-                <p className="mt-4 font-display font-semibold">{s.t}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
-              </div>
-            ))}
-          </div>
+            <div className="flex items-center gap-5"><h2 className="font-mono text-xs font-semibold uppercase text-muted-foreground">Comment ça marche</h2><span className="h-px flex-1 bg-border" /></div>
+            <div className="mt-10 grid gap-4 md:grid-cols-4">
+              {STEPS.map((s) => (
+                <div key={s.n} className="group rounded-lg border bg-background/40 p-6 transition hover:border-primary/40">
+                  <p className="font-display text-4xl font-bold text-muted transition group-hover:text-primary/30">{s.n}</p>
+                  <p className="mt-4 font-display font-semibold">{s.t}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
