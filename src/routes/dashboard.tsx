@@ -1,5 +1,5 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { FolderOpen, LayoutGrid, Search } from "lucide-react";
 import { BuilderShell } from "@/components/site";
 import { ProjectHeader } from "@/components/pages/projects";
@@ -7,7 +7,7 @@ import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { deleteProject, importProject, useProjects } from "@/lib/projects";
+import { deleteProject, useProjects } from "@/lib/projects";
 import { SITE } from "@/data/site";
 
 const PAGE_TITLE = `Mes projets - ${SITE.tool} | ${SITE.name}`;
@@ -31,8 +31,6 @@ const PER_PAGE = 9;
 
 function Dashboard() {
   const projects = useProjects();
-  const nav = useNavigate();
-  const fileRef = useRef<HTMLInputElement>(null);
   const [page, setPage] = useState(1);
   const [q, setQ] = useState("");
   const [toDelete, setToDelete] = useState<{ id: string; title: string } | null>(null);
