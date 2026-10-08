@@ -1,9 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { FolderOpen, LayoutGrid, Search } from "lucide-react";
-import { ProjectCard } from "@/components/ProjectCard";
+import { FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useProjects } from "@/lib/projects";
 
 const PER_PAGE = 9;
@@ -12,12 +10,10 @@ export function ProjectEmpty() {
   const projects = useProjects();
   const [page, setPage] = useState(1);
   const [q, setQ] = useState("");
-  const [toDelete, setToDelete] = useState<{ id: string; title: string } | null>(null);
 
   const filtered = projects.filter((p) => p.title.toLowerCase().includes(q.toLowerCase()));
   const pages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const cur = Math.min(page, pages);
-  const shown = filtered.slice((cur - 1) * PER_PAGE, cur * PER_PAGE);
 
   return (
     <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-12">
