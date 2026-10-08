@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useRef, useState } from "react";
-import { ArrowRight, FileUp, FolderOpen, LayoutGrid, Search } from "lucide-react";
+import { FolderOpen, LayoutGrid, Search } from "lucide-react";
 import { BuilderShell } from "@/components/site";
 import { ProjectHeader } from "@/components/pages/projects";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
@@ -42,27 +42,10 @@ function Dashboard() {
   const cur = Math.min(page, pages);
   const shown = filtered.slice((cur - 1) * PER_PAGE, cur * PER_PAGE);
 
-  const onImport = async (f?: File) => {
-    if (!f) return;
-    try { const p = importProject(await f.text()); nav({ to: "/editor", search: { id: p.id } }); }
-    catch (e) { alert((e as Error).message); }
-  };
-
   return (
     <BuilderShell>
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-12">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 border-b pb-8 sm:flex sm:flex-wrap sm:justify-between">
-          <div className="min-w-0">
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">Espace de travail</p>
-            <h1 className="mt-2 truncate text-3xl font-bold sm:text-4xl">Mes projets</h1>
-            <p className="mt-2 text-sm text-muted-foreground">{projects.length} {projects.length > 1 ? "pages enregistrées" : "page enregistrée"} sur cet appareil</p>
-          </div>
-          <div className="flex shrink-0 gap-2">
-            <Button variant="outline" onClick={() => fileRef.current?.click()}><FileUp /><span className="hidden sm:inline">Importer</span></Button>
-            <Button asChild><Link to="/editor" search={{ id: undefined }}>Page vierge <ArrowRight /></Link></Button>
-            <input ref={fileRef} type="file" accept=".spcbuild,.json" hidden onChange={(e) => onImport(e.target.files?.[0])} />
-          </div>
-        </div>
+        <ProjectHeader />
 
         <div className="mt-6 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
           <div className="relative min-w-0 max-w-md">
