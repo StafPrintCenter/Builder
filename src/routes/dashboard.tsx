@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { FolderOpen, LayoutGrid, Search } from "lucide-react";
+import { LayoutGrid, Search } from "lucide-react";
 import { BuilderShell } from "@/components/site";
 import { ProjectHeader, ProjectEmpty } from "@/components/pages/projects";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
