@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, LifeBuoy } from "lucide-react";
+import { Layout, Sparkles } from "lucide-react";
 import { SITE, SITE_LINK } from "@/data/site";
 import { SiteBuilderIllustration } from "./SiteBuilderIllustration";
 import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
@@ -17,17 +17,17 @@ export function HeroSection() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
         >
-          <BookOpen className="h-3.5 w-3.5 text-primary" />
-          Le constructeur visuel de {SITE.name}
+          <Layout className="h-3.5 w-3.5 text-primary" />
+          Le créateur de sites web de {SITE.name}
         </a>
 
         <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
-          Maîtrisez <span className="font-black">{SITE.name}</span><br />
-          en glissant <span className="text-primary">quelques blocs.</span>
+          Créez avec <span className="font-black">{SITE.name}</span><br />
+          en un <span className="text-primary">glisser-déposer.</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Créez une landing page pour votre activité en quelques minutes, sans écrire une ligne de code.
+          Construisez votre présence en ligne avec un éditeur intuitif. Assemblez vos blocs, ajustez votre design et publiez vos pages sans les contraintes du code.
         </p>
 
         <div className="mt-8 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
@@ -35,14 +35,14 @@ export function HeroSection() {
             to="/dashboard"
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 sm:w-auto"
           >
-            <BookOpen className="size-4" />
+            <Layout className="size-4" />
             Mes projets
           </Link>
           <Link
             to="/templates"
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary  /50 sm:w-auto"
           >
-            <LifeBuoy className="size-4 text-primary" />
+            <Sparkles className="size-4 text-primary" />
             Voir les modèles
           </Link>
         </div>
