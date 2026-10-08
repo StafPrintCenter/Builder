@@ -1,4 +1,5 @@
 import { Code2, Image, LayoutTemplate, MousePointer2, Palette, Type } from "lucide-react";
+import { SITE } from "@/data/site";
 
 const library = [
   { icon: LayoutTemplate, label: "Hero divisé" },
@@ -36,7 +37,7 @@ export function SiteBuilderIllustration() {
           <div className="grid-bg relative overflow-hidden bg-muted p-3 sm:p-5">
             <div className="mx-auto h-full max-w-xs overflow-hidden rounded border bg-foreground text-left text-background shadow-xl">
               <div className="flex items-center justify-between px-4 py-3">
-                <span className="text-[8px] font-bold">SPC BUILDER</span>
+                <span className="text-[8px] font-bold">{SITE.tool}</span>
                 <div className="flex gap-2 text-[6px] opacity-50"><span>Services</span><span>Contact</span></div>
               </div>
               <div className="grid grid-cols-[1.1fr_.9fr] items-center gap-3 px-4 py-6">
@@ -66,7 +67,14 @@ export function SiteBuilderIllustration() {
           <aside className="border-l bg-background/40 p-3">
             <p className="mb-3 font-mono text-[8px] uppercase text-muted-foreground">Style</p>
             <div className="space-y-4">
-              <div><p className="text-[8px] text-muted-foreground">Couleurs</p><div className="mt-2 flex gap-1"><span className="size-4 rounded-sm bg-primary" /><span className="size-4 rounded-sm bg-canvas" /><span className="size-4 rounded-sm bg-badge-service" /></div></div>
+              <div>
+                <p className="text-[8px] text-muted-foreground">Couleurs</p>
+                <div className="mt-2 flex gap-1">
+                  <span className="size-4 rounded-sm bg-primary" />
+                  <span className="size-4 rounded-sm bg-foreground" />
+                  <span className="size-4 rounded-sm bg-badge-service" />
+                </div>
+              </div>
               <div><p className="text-[8px] text-muted-foreground">Espacement</p><div className="mt-2 h-1 rounded bg-muted"><div className="h-1 w-3/5 rounded bg-primary" /></div></div>
               <div className="space-y-2"><div className="h-6 rounded border" /><div className="h-6 rounded border" /></div>
             </div>
