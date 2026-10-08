@@ -2,19 +2,24 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { ArrowRight, FileUp, FolderOpen, LayoutGrid, Search } from "lucide-react";
 import { BuilderShell } from "@/components/site";
+import { ProjectHeader } from "@/components/pages/projects";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { deleteProject, importProject, useProjects } from "@/lib/projects";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `Mes projets - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Retrouvez, modifiez, exportez ou supprimez vos landing pages enregistrées.`;
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Mes projets - SPC Site Builder" },
-      { name: "description", content: "Retrouvez, modifiez, exportez ou supprimez vos landing pages enregistrées." },
-      { property: "og:title", content: "Mes projets - SPC Site Builder" },
-      { property: "og:description", content: "Tableau de bord de vos pages enregistrées dans le navigateur." },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
