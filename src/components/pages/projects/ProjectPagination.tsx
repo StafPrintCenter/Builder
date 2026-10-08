@@ -3,7 +3,7 @@ import { FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useProjects } from "@/lib/projects";
 
-export function ProjectEmpty() {
+export function ProjectPagination() {
   const projects = useProjects();
 
   return (
