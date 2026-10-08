@@ -4,16 +4,8 @@ import { FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useProjects } from "@/lib/projects";
 
-const PER_PAGE = 9;
-
 export function ProjectEmpty() {
   const projects = useProjects();
-  const [page, setPage] = useState(1);
-  const [q, setQ] = useState("");
-
-  const filtered = projects.filter((p) => p.title.toLowerCase().includes(q.toLowerCase()));
-  const pages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
-  const cur = Math.min(page, pages);
 
   return (
     <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-12">
