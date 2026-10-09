@@ -11,7 +11,7 @@ export function ProjectCard({ project, onDelete }: { project: ProjectState; onDe
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-lg border bg-card transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-2xl">
-      <Link to="/editor" search={{ id: project.id }} className="relative block aspect-[16/10] overflow-hidden border-b bg-muted" aria-label={`Ouvrir ${project.title}`}>
+      <Link to="/editor" search={{ id: project.id }} className="relative block aspect-16/10 overflow-hidden border-b bg-muted" aria-label={`Ouvrir ${project.title}`}>
         {isEmpty ? (
           <div className="grid h-full place-items-center grid-bg">
             <div className="text-center">
