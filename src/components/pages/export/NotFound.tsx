@@ -3,7 +3,7 @@ import { ArrowLeft, Home, Sparkles, Unlink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/data/site";
 
-export function NotFoundComponent() {
+export function CodeExportNotFound() {
   return (
     <div className="relative flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden bg-background p-4 text-foreground select-none sm:p-6">
       {/* Grille de fond subtile */}
