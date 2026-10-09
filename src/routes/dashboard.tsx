@@ -22,7 +22,7 @@ export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
 });
 
-const PER_PAGE = 3;
+const PER_PAGE = 6;
 
 function Dashboard() {
   const projects = useProjects();
