@@ -31,7 +31,7 @@ export function NotFoundComponent() {
         </h1>
 
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          La page ou le projet que vous cherchez n'existe pas, a été déplacé ou est momentanément indisponible.
+          Le projet que vous cherchez n'existe pas ou a été supprimé.
         </p>
 
         {/* Actions de retour */}
