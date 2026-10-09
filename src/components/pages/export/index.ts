@@ -1,3 +1,3 @@
-export { CodeExportHeader } from "./CodeExportHeader";
-export { CodeExportTabs } from "./CodeExportTabs";
-export { NotFoundComponent } from "./NotFoundComponent";
+export { CodeExportHeader } from "./Header";
+export { CodeExportTabs } from "./Tabs";
+export { NotFoundComponent } from "./NotFound";
