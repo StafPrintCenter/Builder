@@ -9,88 +9,67 @@ const library = [
 
 export function SiteBuilderIllustration() {
   return (
-    <div className="relative mx-auto w-full min-w-0 max-w-xl lg:mx-0 lg:max-w-none">
-      <div className="w-full min-w-0 overflow-hidden rounded-xl border border-border bg-panel shadow-2xl">
-        {/* Barre supérieure */}
-        <div className="flex h-10 min-w-0 items-center justify-between gap-2 border-b border-border px-3 sm:px-4">
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-            <span className="size-2 rounded-full bg-destructive" />
-            <span className="size-2 rounded-full bg-badge-offer" />
-            <span className="size-2 rounded-full bg-badge-form" />
-          </div>
+    <div className="relative mx-auto w-full max-w-xl min-w-0 lg:mx-0 lg:max-w-none">
+      {/* Halo lumineux de fond */}
+      <div className="absolute -inset-10 -z-10 rounded-full bg-primary/10 blur-3xl" />
 
-          <span className="min-w-0 flex-1 truncate text-center font-mono text-[9px] text-muted-foreground sm:text-[10px]">
+      <div className="overflow-hidden rounded-xl border bg-panel shadow-2xl">
+        {/* En-tête du mock */}
+        <div className="flex h-10 items-center justify-between border-b px-4">
+          <div className="flex items-center gap-2">
+            <span className="size-2 rounded-full bg-destructive/80" />
+            <span className="size-2 rounded-full bg-badge-offer/80" />
+            <span className="size-2 rounded-full bg-badge-form/80" />
+          </div>
+          <span className="font-mono text-[10px] text-muted-foreground truncate max-w-[150px] sm:max-w-none">
             campagne-print.spcbuild
           </span>
-
-          <span className="shrink-0 rounded border border-border px-1.5 py-0.5 font-mono text-[8px] text-muted-foreground sm:px-2 sm:text-[9px]">
-            <span className="sm:hidden">OK</span>
-            <span className="hidden sm:inline">Enregistré</span>
-          </span>
+          <span className="rounded border px-2 py-0.5 font-mono text-[9px] text-muted-foreground">Enregistré</span>
         </div>
 
-        {/* Éditeur : panneaux adaptatifs */}
-        <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[88px_minmax(0,1fr)] md:grid-cols-[112px_minmax(0,1fr)_88px] lg:grid-cols-[112px_minmax(0,1fr)_96px]">
-          {/* Bibliothèque : masquée sur mobile */}
-          <aside className="hidden min-w-0 border-r border-border bg-background/40 p-2 md:block lg:p-3">
-            <p className="mb-3 truncate font-mono text-[8px] uppercase text-muted-foreground">
-              Bibliothèque
-            </p>
-
+        {/* Layout principal de l'éditeur */}
+        <div className="grid h-80 grid-cols-[80px_1fr_64px] xs:grid-cols-[100px_1fr_80px] sm:h-96 sm:grid-cols-[140px_1fr_120px]">
+          {/* Panneau latéral gauche (Composants) */}
+          <aside className="border-r bg-background/40 p-2 sm:p-3">
+            <p className="mb-3 font-mono text-[8px] uppercase text-muted-foreground truncate">Bibliothèque</p>
             <div className="space-y-2">
               {library.map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="min-w-0 rounded border border-border bg-card p-2"
-                >
+                <div key={label} className="rounded border bg-card p-1.5 xs:p-2 hover:border-primary/50 cursor-grab transition-colors">
                   <Icon className="size-3 text-primary" />
-                  <p className="mt-1.5 truncate text-[9px] font-medium">
-                    {label}
-                  </p>
+                  <p className="mt-1 xs:mt-1.5 truncate text-[8px] xs:text-[9px] font-medium text-foreground">{label}</p>
                 </div>
               ))}
             </div>
           </aside>
 
-          {/* Zone de création */}
-          <div className="grid-bg relative min-w-0 overflow-hidden bg-muted p-2.5 sm:p-3 md:p-3 lg:p-5">
-            <div className="mx-auto min-h-62.5 w-full max-w-xs overflow-hidden rounded border border-border bg-foreground text-left text-background shadow-xl sm:min-h-75 md:min-h-80">
-              {/* Navigation du site */}
-              <div className="flex items-center justify-between gap-2 px-2.5 py-2.5 sm:px-3 sm:py-3">
-                <span className="min-w-0 truncate text-[8px] font-bold sm:text-[9px]">
-                  {SITE.tool}
-                </span>
-
-                <div className="flex shrink-0 gap-2 text-[6px] opacity-60 sm:gap-3 sm:text-[7px]">
-                  <span>Services</span>
-                  <span>Contact</span>
+          {/* Zone de canvas principal (Le site en construction) */}
+          <div className="grid-bg relative overflow-hidden bg-muted p-2 xs:p-3 sm:p-5">
+            {/* Aperçu du site (Mobile-first dans l'aperçu) */}
+            <div className="mx-auto h-full max-w-[240px] xs:max-w-xs overflow-hidden rounded border bg-foreground text-left text-background shadow-xl">
+              {/* Header factice */}
+              <div className="flex items-center justify-between px-3 py-2.5 xs:px-4 xs:py-3 border-b border-background/10">
+                <span className="text-[7px] xs:text-[8px] font-bold">{SITE.tool}</span>
+                <div className="flex gap-1.5 xs:gap-2 text-[5px] xs:text-[6px] opacity-50">
+                  <span>Services</span><span>Contact</span>
                 </div>
               </div>
 
-              {/* Hero de la landing page */}
-              <div className="grid grid-cols-1 items-center gap-3 px-3 py-4 min-[420px]:grid-cols-[1.1fr_.9fr] min-[420px]:px-3 min-[420px]:py-5 sm:gap-3 sm:px-4 sm:py-6">
-                <div className="min-w-0">
-                  <div className="mb-2 h-1 w-10 rounded bg-primary sm:w-12" />
-
-                  <p className="text-base font-bold leading-tight min-[420px]:text-sm sm:text-lg">
-                    Une page qui transforme vos idées.
-                  </p>
-
-                  <div className="mt-3 space-y-1">
-                    <div className="h-1.5 w-full rounded bg-background/15" />
-                    <div className="h-1.5 w-4/5 rounded bg-background/15" />
-                  </div>
-
-                  <div className="mt-3 inline-flex rounded bg-primary px-2.5 py-1.5 text-[7px] font-bold text-primary-foreground sm:mt-4 sm:px-3">
+              {/* Section Héro factice */}
+              <div className="grid grid-cols-[1fr_.8fr] items-center gap-2.5 xs:gap-3 px-3 py-4 xs:px-4 xs:py-6">
+                <div>
+                  <div className="mb-1.5 xs:mb-2 h-1 w-10 xs:w-12 rounded bg-primary" />
+                  <p className="text-xs xs:text-sm font-bold leading-tight sm:text-lg">Une page qui transforme vos idées.</p>
+                  <div className="mt-2.5 xs:mt-3 h-1 w-full rounded bg-background/15" />
+                  <div className="mt-1 h-1 w-4/5 rounded bg-background/15" />
+                  <div className="mt-3.5 xs:mt-4 inline-flex rounded bg-primary px-2.5 py-1 xs:px-3 xs:py-1.5 text-[6px] xs:text-[7px] font-bold text-primary-foreground">
                     Démarrer
                   </div>
                 </div>
-
-                {/* Visuel de la page */}
-                <div className="hidden aspect-4/3s min-w-0 rounded bg-background/10 p-2 min-[420px]:block">
+                {/* Image factice */}
+                <div className="aspect-4/3 rounded bg-background/10 p-1.5 xs:p-2">
                   <div className="grid h-full grid-cols-2 gap-1">
                     <div className="rounded bg-primary/80" />
-                    <div className="grid min-h-0 gap-1">
+                    <div className="grid gap-1">
                       <div className="rounded bg-badge-service/70" />
                       <div className="rounded bg-background/20" />
                     </div>
@@ -98,89 +77,62 @@ export function SiteBuilderIllustration() {
                 </div>
               </div>
 
-              {/* Cartes de services */}
-              <div className="grid grid-cols-3 gap-1.5 border-t border-background/10 px-2.5 py-3 sm:gap-2 sm:px-4 sm:py-4">
+              {/* Grille de caractéristiques factice */}
+              <div className="grid grid-cols-3 gap-1.5 xs:gap-2 border-t border-background/10 px-3 py-3 xs:px-4 xs:py-4">
                 {["Design", "Mobile", "Export"].map((label) => (
-                  <div
-                    key={label}
-                    className="min-w-0 rounded border border-background/10 p-1.5 text-center text-[7px] font-semibold sm:p-2"
-                  >
+                  <div key={label} className="rounded border border-background/10 p-1.5 xs:p-2 text-[6px] xs:text-[7px] font-semibold text-center truncate">
                     {label}
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Curseur de sélection */}
-            <div className="pointer-events-none absolute left-[45%] top-[45%] rounded bg-primary p-1 text-primary-foreground shadow-lg">
+            {/* Curseur de souris flottant */}
+            <div className="absolute left-[45%] top-[50%] xs:left-[38%] xs:top-[45%] rounded bg-primary p-1 text-primary-foreground shadow-lg drop-shadow-md">
               <MousePointer2 className="size-3" />
             </div>
           </div>
 
-          {/* Panneau Style : masqué sur mobile et petit écran */}
-          <aside className="hidden min-w-0 border-l border-border bg-background/40 p-2 lg:block">
-            <p className="mb-3 font-mono text-[8px] uppercase text-muted-foreground">
-              Style
-            </p>
-
+          {/* Panneau latéral droit (Style/Propriétés) */}
+          <aside className="border-l bg-background/40 p-2 sm:p-3">
+            <p className="mb-3 font-mono text-[8px] uppercase text-muted-foreground truncate">Style</p>
             <div className="space-y-4">
               <div>
                 <p className="text-[8px] text-muted-foreground">Couleurs</p>
-                <div className="mt-2 flex gap-1">
-                  <span className="size-3.5 rounded-sm bg-primary" />
-                  <span className="size-3.5 rounded-sm bg-foreground" />
-                  <span className="size-3.5 rounded-sm bg-badge-service" />
+                <div className="mt-2 flex gap-1 flex-wrap">
+                  <span className="size-3.5 xs:size-4 rounded-sm bg-primary" />
+                  <span className="size-3.5 xs:size-4 rounded-sm bg-foreground" />
+                  <span className="size-3.5 xs:size-4 rounded-sm bg-badge-service" />
                 </div>
               </div>
-
               <div>
-                <p className="text-[8px] text-muted-foreground">
-                  Espacement
-                </p>
+                <p className="text-[8px] text-muted-foreground">Espacement</p>
                 <div className="mt-2 h-1 rounded bg-muted">
                   <div className="h-1 w-3/5 rounded bg-primary" />
                 </div>
               </div>
-
-              <div className="space-y-2">
-                <div className="h-6 rounded border border-border" />
-                <div className="h-6 rounded border border-border" />
+              <div className="space-y-1.5 xs:space-y-2">
+                <div className="h-5 xs:h-6 rounded border border-border/60 bg-card" />
+                <div className="h-5 xs:h-6 rounded border border-border/60 bg-card" />
               </div>
             </div>
           </aside>
         </div>
 
-        {/* Barre inférieure responsive */}
-        <div className="flex min-h-10 items-center justify-between gap-2 border-t border-border px-2.5 py-2 text-[9px] text-muted-foreground sm:px-4 sm:text-[10px]">
-          <span className="inline-flex min-w-0 items-center gap-1.5">
-            <Palette className="size-3 shrink-0 text-primary" />
-            <span className="truncate">Édition visuelle</span>
-          </span>
-
-          <span className="hidden items-center gap-1.5 min-[420px]:inline-flex">
-            <Code2 className="size-3 shrink-0 text-badge-service" />
-            <span>HTML propre</span>
-          </span>
-
-          <span className="shrink-0 font-mono text-[8px] sm:text-[9px]">
-            375 · 768 · 1440 px
-          </span>
+        {/* Barre de pied du mock */}
+        <div className="flex h-11 items-center justify-between border-t px-4 text-[9px] xs:text-[10px] text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Palette className="size-3 text-primary" /> Édition visuelle</span>
+          <span className="inline-flex items-center gap-1.5"><Code2 className="size-3 text-badge-service" /> HTML propre</span>
+          <span className="font-mono hidden xs:inline">375 · 768 · 1440 px</span>
         </div>
       </div>
 
-      {/* Badge flottant */}
-      <div className="absolute -bottom-5 left-2 hidden items-center gap-3 rounded-lg border border-border bg-card px-3 py-2.5 shadow-xl sm:flex sm:px-4 sm:py-3">
-        <span className="grid size-8 shrink-0 place-items-center rounded-md bg-primary font-display font-bold text-primary-foreground">
-          36
-        </span>
-
+      {/* Badge flottant inférieur (Caché sur mobile) */}
+      <div className="absolute -bottom-5 -left-3 hidden items-center gap-3 rounded-lg border bg-card px-4 py-3 shadow-xl sm:flex">
+        <span className="grid size-8 place-items-center rounded-md bg-primary font-display font-bold text-primary-foreground">36</span>
         <span className="text-xs">
-          <strong className="block text-foreground">
-            Blocs & éléments
-          </strong>
-          <span className="text-muted-foreground">
-            prêts à assembler
-          </span>
+          <strong className="block text-foreground">Blocs & éléments</strong>
+          <span className="text-muted-foreground">prêts à assembler</span>
         </span>
       </div>
     </div>
