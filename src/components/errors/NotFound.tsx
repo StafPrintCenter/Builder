@@ -1,15 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowLeft,
-  Blocks,
-  FilePlus2,
-  Home,
-  Layers3,
-  LayoutTemplate,
-  MousePointer2,
-  PanelTop,
-  Smartphone,
-} from "lucide-react";
+import { ArrowLeft, Blocks, FilePlus2, Home, Layers3, LayoutTemplate, MousePointer2, PanelTop, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function NotFoundComponent() {
@@ -49,7 +39,7 @@ export function NotFoundComponent() {
         <div className="relative z-10 grid w-full max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-14">
           {/* Illustration : canvas perdu */}
           <div className="relative mx-auto w-full max-w-md">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-card/70 p-3 shadow-2xl backdrop-blur-sm sm:p-5">
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-border bg-card/70 p-3 shadow-2xl backdrop-blur-sm sm:p-5">
               {/* Barre d'outils fictive */}
               <div className="flex h-8 items-center justify-between border-b border-border pb-3">
                 <div className="flex items-center gap-1.5">
