@@ -1,21 +1,14 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 import { DEVICES, type Device } from "@/components/DeviceSwitch";
-import {
-  makeInstance,
-  uid,
-  type BlockInstance,
-  type ProjectState,
-} from "@/lib/builderRegistry";
+import { makeInstance, uid, type BlockInstance, type ProjectState } from "@/lib/builderRegistry";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { createProject, getProject, saveProject } from "@/lib/projects";
-import {
-  CanvasBlock,
-  DropLine,
-  EditorHeader,
-  Inspector,
-  Library,
-} from "@/components/pages/editor";
+import { CanvasBlock, DropLine, EditorHeader, Inspector, Library } from "@/components/pages/editor";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `Éditeur - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Glissez vos blocs, éditez vos textes et ajustez vos styles en direct.`;
 
 export const Route = createFileRoute("/editor")({
   validateSearch: (s: Record<string, unknown>) => ({
@@ -23,16 +16,10 @@ export const Route = createFileRoute("/editor")({
   }),
   head: () => ({
     meta: [
-      { title: "Éditeur - SPC Site Builder" },
-      {
-        name: "description",
-        content: "Glissez vos blocs, éditez vos textes et ajustez vos styles en direct.",
-      },
-      { property: "og:title", content: "Éditeur - SPC Site Builder" },
-      {
-        property: "og:description",
-        content: "Éditeur visuel 3 panneaux de STAF PRINT CENTER.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: Editor,
