@@ -5,18 +5,16 @@ import { TemplateCard } from "@/components/TemplateCard";
 import { BLOCKS, TEMPLATES } from "@/lib/builderRegistry";
 import { SITE } from "@/data/site";
 
-const PAGE_TITLE = `Mes projets - ${SITE.tool} | ${SITE.name}`;
-const PAGE_DESC = `Retrouvez, modifiez, exportez ou supprimez vos landing pages enregistrées.`;
+const PAGE_TITLE = `Modèles - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Retrouvez, modifiez, exportez ou supprimez vos landing pages enregistréesGalerie de modèles de landing pages pré-construits par ${SITE.name}.`;
 
 export const Route = createFileRoute("/templates")({
   head: () => ({
     meta: [
-      { title: "Modèles SPC - SPC Site Builder" },
-      { name: "description", content: "Galerie de modèles de landing pages pré-construits par STAF PRINT CENTER." },
-      { property: "og:title", content: "Modèles SPC - SPC Site Builder" },
-      { property: "og:description", content: "Choisissez un modèle et personnalisez-le en quelques minutes." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: Templates,
