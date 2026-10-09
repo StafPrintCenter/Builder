@@ -4,6 +4,10 @@ import JSZip from "jszip";
 import { BuilderShell, PageHeader } from "@/components/site";
 import { exportHtml } from "@/lib/builderRegistry";
 import { download, slug, useProject } from "@/lib/projects";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `Export du code - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Téléchargez votre page en HTML/Tailwind, en projet .spcbuild ou en archive ZIP.`;
 
 export const Route = createFileRoute("/code-export")({
   validateSearch: (s: Record<string, unknown>) => ({ id: typeof s['id'] === "string" ? s['id'] : undefined }),
