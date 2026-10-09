@@ -39,7 +39,7 @@ function Dashboard() {
 
   const handleSearchChange = (query: string) => {
     setQ(query);
-    setPage(1); // Réinitialise à la première page lors d'une recherche
+    setPage(1);
   };
 
   return (
