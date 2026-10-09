@@ -1,9 +1,9 @@
-import { useRouter, Link } from "@tanstack/react-router";
+import { useRouter, Link, type ErrorComponentProps } from "@tanstack/react-router";
 import { AlertCircle, RefreshCw, Home } from "lucide-react";
 import { useEffect } from "react";
 import { reportError } from "@/lib/error/reporting";
 
-export function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+export function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
 
