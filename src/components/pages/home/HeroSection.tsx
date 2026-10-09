@@ -32,7 +32,7 @@ export function HeroSection() {
 
         <div className="mt-8 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
           <Link
-            to="/dashboard"
+            to="/projects"
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 sm:w-auto"
           >
             <Layout className="size-4" />
