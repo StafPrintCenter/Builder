@@ -21,7 +21,7 @@ export function SiteBuilderIllustration() {
             <span className="size-2 rounded-full bg-badge-offer/80" />
             <span className="size-2 rounded-full bg-badge-form/80" />
           </div>
-          <span className="font-mono text-[10px] text-muted-foreground truncate max-w-[150px] sm:max-w-none">
+          <span className="font-mono text-[10px] text-muted-foreground truncate max-w-37.5 sm:max-w-none">
             campagne-print.spcbuild
           </span>
           <span className="rounded border px-2 py-0.5 font-mono text-[9px] text-muted-foreground">Enregistré</span>
@@ -45,7 +45,7 @@ export function SiteBuilderIllustration() {
           {/* Zone de canvas principal (Le site en construction) */}
           <div className="grid-bg relative overflow-hidden bg-muted p-2 xs:p-3 sm:p-5">
             {/* Aperçu du site (Mobile-first dans l'aperçu) */}
-            <div className="mx-auto h-full max-w-[240px] xs:max-w-xs overflow-hidden rounded border bg-foreground text-left text-background shadow-xl">
+            <div className="mx-auto h-full max-w-60:max-w-xs overflow-hidden rounded border bg-foreground text-left text-background shadow-xl">
               {/* Header factice */}
               <div className="flex items-center justify-between px-3 py-2.5 xs:px-4 xs:py-3 border-b border-background/10">
                 <span className="text-[7px] xs:text-[8px] font-bold">{SITE.tool}</span>
