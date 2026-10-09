@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { LayoutGrid, Search } from "lucide-react";
 import { BuilderShell } from "@/components/site";
-import { ProjectHeader, ProjectEmpty } from "@/components/pages/projects";
+import { ProjectHeader, ProjectEmpty, ProjectPagination } from "@/components/pages/projects";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
 });
 
-const PER_PAGE = 9;
+const PER_PAGE = 3;
 
 function Dashboard() {
   const projects = useProjects();
@@ -72,6 +72,7 @@ function Dashboard() {
             <Button variant="outline" size="sm" disabled={cur === pages} onClick={() => setPage(cur + 1)}>Suivant ›</Button>
           </div>
         )}
+        <ProjectPagination />
       </main>
 
       <ConfirmDialog open={!!toDelete} onOpenChange={(o) => !o && setToDelete(null)}
