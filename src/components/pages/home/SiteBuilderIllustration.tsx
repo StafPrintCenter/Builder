@@ -1,11 +1,4 @@
-import {
-  Code2,
-  Image,
-  LayoutTemplate,
-  MousePointer2,
-  Palette,
-  Type,
-} from "lucide-react";
+import { Code2, Image, LayoutTemplate, MousePointer2, Palette, Type } from "lucide-react";
 import { SITE } from "@/data/site";
 
 const library = [
@@ -61,7 +54,7 @@ export function SiteBuilderIllustration() {
 
           {/* Zone de création */}
           <div className="grid-bg relative min-w-0 overflow-hidden bg-muted p-2.5 sm:p-3 md:p-3 lg:p-5">
-            <div className="mx-auto min-h-[250px] w-full max-w-xs overflow-hidden rounded border border-border bg-foreground text-left text-background shadow-xl sm:min-h-[300px] md:min-h-[320px]">
+            <div className="mx-auto min-h-62.5 w-full max-w-xs overflow-hidden rounded border border-border bg-foreground text-left text-background shadow-xl sm:min-h-75 md:min-h-80">
               {/* Navigation du site */}
               <div className="flex items-center justify-between gap-2 px-2.5 py-2.5 sm:px-3 sm:py-3">
                 <span className="min-w-0 truncate text-[8px] font-bold sm:text-[9px]">
@@ -94,7 +87,7 @@ export function SiteBuilderIllustration() {
                 </div>
 
                 {/* Visuel de la page */}
-                <div className="hidden aspect-[4/3] min-w-0 rounded bg-background/10 p-2 min-[420px]:block">
+                <div className="hidden aspect-4/3s min-w-0 rounded bg-background/10 p-2 min-[420px]:block">
                   <div className="grid h-full grid-cols-2 gap-1">
                     <div className="rounded bg-primary/80" />
                     <div className="grid min-h-0 gap-1">
