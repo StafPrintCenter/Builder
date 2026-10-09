@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CguRouteImport } from './routes/cgu'
-import { Route as CodeExportRouteImport } from './routes/code-export'
 import { Route as EditorRouteImport } from './routes/editor'
 import { Route as PreviewRouteImport } from './routes/preview'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -26,11 +25,6 @@ const IndexRoute = IndexRouteImport.update({
 const CguRoute = CguRouteImport.update({
   id: '/cgu',
   path: '/cgu',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CodeExportRoute = CodeExportRouteImport.update({
-  id: '/code-export',
-  path: '/code-export',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EditorRoute = EditorRouteImport.update({
@@ -62,7 +56,6 @@ const TemplatesRoute = TemplatesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cgu': typeof CguRoute
-  '/code-export': typeof CodeExportRoute
   '/editor': typeof EditorRoute
   '/preview': typeof PreviewRoute
   '/projects': typeof ProjectsRoute
@@ -72,7 +65,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cgu': typeof CguRoute
-  '/code-export': typeof CodeExportRoute
   '/editor': typeof EditorRoute
   '/preview': typeof PreviewRoute
   '/projects': typeof ProjectsRoute
@@ -83,7 +75,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cgu': typeof CguRoute
-  '/code-export': typeof CodeExportRoute
   '/editor': typeof EditorRoute
   '/preview': typeof PreviewRoute
   '/projects': typeof ProjectsRoute
@@ -95,7 +86,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cgu'
-    | '/code-export'
     | '/editor'
     | '/preview'
     | '/projects'
@@ -105,7 +95,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cgu'
-    | '/code-export'
     | '/editor'
     | '/preview'
     | '/projects'
@@ -115,7 +104,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cgu'
-    | '/code-export'
     | '/editor'
     | '/preview'
     | '/projects'
@@ -126,7 +114,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CguRoute: typeof CguRoute
-  CodeExportRoute: typeof CodeExportRoute
   EditorRoute: typeof EditorRoute
   PreviewRoute: typeof PreviewRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -148,13 +135,6 @@ declare module '@tanstack/react-router' {
       path: '/cgu'
       fullPath: '/cgu'
       preLoaderRoute: typeof CguRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/code-export': {
-      id: '/code-export'
-      path: '/code-export'
-      fullPath: '/code-export'
-      preLoaderRoute: typeof CodeExportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/editor': {
@@ -198,7 +178,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CguRoute: CguRoute,
-  CodeExportRoute: CodeExportRoute,
   EditorRoute: EditorRoute,
   PreviewRoute: PreviewRoute,
   ProjectsRoute: ProjectsRoute,
