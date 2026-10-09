@@ -40,7 +40,7 @@ export function ProjectCard({ project, onDelete }: { project: ProjectState; onDe
 
         <div className="mt-auto grid grid-cols-[1fr_1fr_auto] gap-2 pt-5">
           <Button asChild variant="outline" size="sm"><Link to="/preview" search={{ id: project.id }}><Eye />Aperçu</Link></Button>
-          <Button asChild variant="outline" size="sm"><Link to="/code-export" search={{ id: project.id }}><Code2 />Code</Link></Button>
+          <Button asChild variant="outline" size="sm"><Link to="/export" search={{ id: project.id }}><Code2 />Code</Link></Button>
           <Button variant="ghost" size="icon" onClick={onDelete} aria-label={`Supprimer ${project.title}`} title="Supprimer" className="text-destructive hover:text-destructive"><Trash2 /></Button>
         </div>
       </div>
