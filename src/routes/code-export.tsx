@@ -13,10 +13,10 @@ export const Route = createFileRoute("/code-export")({
   validateSearch: (s: Record<string, unknown>) => ({ id: typeof s['id'] === "string" ? s['id'] : undefined }),
   head: () => ({
     meta: [
-      { title: "Export du code - SPC Site Builder" },
-      { name: "description", content: "Téléchargez votre page en HTML/Tailwind, en projet .spcbuild ou en archive ZIP." },
-      { property: "og:title", content: "Export du code - SPC Site Builder" },
-      { property: "og:description", content: "Code HTML/Tailwind propre, généré dans votre navigateur." },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: CodeExport,
