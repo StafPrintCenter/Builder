@@ -33,8 +33,15 @@ function CodeExport() {
   if (p === undefined) return null;
   if (p === null)
     return (
-      <div className="flex min-h-screen flex-col"><PageHeader />
-        <p className="p-20 text-center text-muted-foreground">Projet introuvable. <Link to="/" className="text-primary">Retour</Link></p>
+      <div className="flex min-h-screen flex-col">
+        <PageHeader />
+        <p className="p-20 text-center text-muted-foreground">
+          Projet introuvable.
+          <br />
+          <Link to="/" className="text-primary">
+            Retour
+          </Link>
+        </p>
       </div>
     );
 
@@ -51,7 +58,7 @@ function CodeExport() {
 
   return (
     <BuilderShell>
-      <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-10">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-4">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <Link
