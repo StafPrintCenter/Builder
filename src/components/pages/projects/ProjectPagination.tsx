@@ -1,48 +1,49 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useProjects } from "@/lib/projects";
 
-const PER_PAGE = 3;
+interface ProjectPaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
 
-export function ProjectPagination() {
-  const projects = useProjects();
-  const [page, setPage] = useState(1);
-  const [q, setQ] = useState("");
-
-  const filtered = projects.filter((p) => p.title.toLowerCase().includes(q.toLowerCase()));
-  const pages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
-  const cur = Math.min(page, pages);
+export function ProjectPagination({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: ProjectPaginationProps) {
+  if (totalPages <= 1) return null;
 
   return (
-    <div>
-      {pages > 1 && (
-        <div className="mt-6 flex items-center justify-center gap-1">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={cur === 1}
-            onClick={() => setPage(cur - 1)}>
-            ‹ Précédent
-          </Button>
+    <div className="mt-6 flex items-center justify-center gap-1">
+      <Button
+        variant="outline"
+        size="sm"
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(currentPage - 1)}
+      >
+        ‹ Précédent
+      </Button>
 
-          {Array.from({ length: pages }, (_, i) => i + 1).map((n) => (
-            <Button
-              key={n} size="icon"
-              variant={n === cur ? "default" : "outline"}
-              onClick={() => setPage(n)}
-              className="size-8">{n}
-            </Button>
-          ))}
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+        <Button
+          key={n}
+          size="icon"
+          variant={n === currentPage ? "default" : "outline"}
+          onClick={() => onPageChange(n)}
+          className="size-8"
+        >
+          {n}
+        </Button>
+      ))}
 
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={cur === pages}
-            onClick={() => setPage(cur + 1)}>
-            Suivant ›
-          </Button>
-        </div>
-      )}
+      <Button
+        variant="outline"
+        size="sm"
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(currentPage + 1)}
+      >
+        Suivant ›
+      </Button>
     </div>
   );
 }
