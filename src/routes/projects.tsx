@@ -44,7 +44,7 @@ function Dashboard() {
 
   return (
     <BuilderShell>
-      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-12">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6">
         {/* Entête avec barre de recherche connectée */}
         <ProjectHeader
           searchQuery={q}
