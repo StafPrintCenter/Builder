@@ -7,7 +7,7 @@ import { SpcDeskLogo } from "@/components/site";
 
 const navItems = [
   {
-    to: "/dashboard" as const,
+    to: "/projects" as const,
     label: "Mes projets",
     icon: FolderKanban,
   },
