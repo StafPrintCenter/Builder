@@ -1,23 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowUpRight,
-  FilePlus2,
-  FolderKanban,
-  LayoutTemplate,
-  Menu,
-  PanelsTopLeft,
-  X,
-} from "lucide-react";
+import { ArrowUpRight, FilePlus2, FolderKanban, LayoutTemplate, Menu, PanelsTopLeft, X } from "lucide-react";
 import { ThemeToggle } from "./";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { SpcDeskLogo } from "@/components/site";
 
 const navItems = [
