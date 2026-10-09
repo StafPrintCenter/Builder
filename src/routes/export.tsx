@@ -5,7 +5,7 @@ import { BuilderShell } from "@/components/site";
 import { exportHtml } from "@/lib/builderRegistry";
 import { download, slug, useProject } from "@/lib/projects";
 import { SITE } from "@/data/site";
-import { CodeExportHeader, CodeExportTabs, NotFoundComponent } from "@/components/pages/export";
+import { CodeExportHeader, CodeExportTabs, CodeExportNotFound } from "@/components/pages/export";
 
 const PAGE_TITLE = `Export du code - ${SITE.tool} | ${SITE.name}`;
 const PAGE_DESC = `Téléchargez votre page en HTML/Tailwind, en projet .spcbuild ou en archive ZIP.`;
@@ -41,7 +41,7 @@ function CodeExport() {
   );
 
   if (p === undefined) return null;
-  if (p === null) return <NotFoundComponent />;
+  if (p === null) return <CodeExportNotFound />;
 
   const name = slug(p.title);
   const code = tab === "html" ? html : json;
