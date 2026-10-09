@@ -93,10 +93,24 @@ function CodeExport() {
 
         <div className="mt-6 flex gap-1 border-b">
           {(["html", "json"] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)} className={`-mb-px border-b-2 px-4 py-2 font-mono text-xs ${tab === t ? "border-primary text-foreground" : "border-transparent text-muted-foreground"}`}>{t === "html" ? "index.html" : "projet.spcbuild"}</button>
+            <button key={t} onClick={() => setTab(t)}
+              className={`-mb-px border-b-2 px-4 py-2 font-mono text-xs 
+                ${tab === t ? "border-primary text-foreground" : "border-transparent text-muted-foreground"}`}
+            >
+              {t === "html"
+                ? "index.html"
+                : "projet.spcbuild"
+              }
+            </button>
           ))}
         </div>
-        <pre className="mt-0 max-h-[65vh] overflow-auto rounded-b-lg bg-panel p-5 font-mono text-xs leading-relaxed text-muted-foreground"><code>{code}</code></pre>
+
+        <pre
+          className="mt-0 max-h-[65vh] overflow-auto rounded-b-lg bg-panel p-5 font-mono text-xs leading-relaxed text-muted-foreground"
+        >
+          <code>{code}
+          </code>
+        </pre>
       </main>
     </BuilderShell>
   );
