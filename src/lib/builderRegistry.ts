@@ -361,7 +361,7 @@ function EXTRA_BLOCKS(): BlockSchema[] {
       `<div class="max-w-3xl mx-auto px-6"><ol class="grid gap-3 text-lg" style="list-style:none;padding:0">${[1, 2, 3].map((n) => `<li style="display:flex;gap:12px;align-items:center"><span style="color:var(--a);font-weight:700">${n}.</span><span data-field="i${n}">{{i${n}}}</span></li>`).join("")}</ol></div>`),
     el("el-stat", "Chiffre clé", "Gros chiffre + légende", { title: "2 500+", body: "Clients satisfaits" },
       `<div class="max-w-5xl mx-auto px-6"><p data-field="title" class="text-5xl font-bold" style="color:var(--a)">{{title}}</p><p data-field="body" class="opacity-60">{{body}}</p></div>`),
-    el("el-map", "Carte Google", "Plan intégré", { mapQuery: "Porto-Novo, Bénin" },
+    el("el-map", "Carte Google", "Plan intégré", { mapQuery: "STAF PRINT CENTER" },
       `<div class="max-w-5xl mx-auto px-6"><iframe src="https://maps.google.com/maps?q={{mapQuery}}&output=embed" class="w-full rounded-2xl" style="border:0;height:360px" loading="lazy"></iframe></div>`),
     el("el-social", "Réseaux sociaux", "Liens Facebook, WhatsApp…", { s1: "Facebook", s1Url: "https://facebook.com", s1Target: "_blank", s2: "WhatsApp", s2Url: "https://wa.me/22900000000", s2Target: "_blank", s3: "Instagram", s3Url: "https://instagram.com", s3Target: "_blank" },
       `<div class="max-w-5xl mx-auto px-6" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:inherit">${[1, 2, 3].map((n) => `<a href="{{s${n}Url}}" target="{{s${n}Target}}" rel="noopener" data-field="s${n}" style="border:1px solid currentColor;padding:8px 16px;border-radius:999px;text-decoration:none;color:inherit;font-size:14px">{{s${n}}}</a>`).join("")}</div>`),
