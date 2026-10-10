@@ -43,7 +43,7 @@ export function PageFooter() {
             </Link>
 
             <a
-              href={SITE_LINK.docsUrl}
+              href={`${SITE_LINK.docsUrl}/docs/arcade/index`}
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 transition-colors hover:text-primary"
