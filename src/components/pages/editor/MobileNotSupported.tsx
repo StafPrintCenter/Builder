@@ -2,6 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, Monitor, Smartphone } from "lucide-react";
 import { SITE } from "@/data/site";
 import { Button } from "@/components/ui/button";
+import { SpcDeskLogo } from "@/components/site";
 
 export function MobileNotSupported() {
   const nav = useNavigate();
@@ -11,15 +12,7 @@ export function MobileNotSupported() {
       {/* Header */}
       <header className="flex h-14 shrink-0 items-center justify-between border-b bg-panel px-4">
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => nav({ to: "/" })}
-            title="Retour à l'accueil"
-          >
-            <ArrowLeft className="h-5 w-5" />
-          </Button>
-          <span className="font-semibold text-sm">{SITE.tool}</span>
+          <SpcDeskLogo className="h-9 w-auto sm:h-10" />
         </div>
         <div className="flex items-center gap-1.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground">
           <Smartphone className="h-3.5 w-3.5 text-amber-500" />
