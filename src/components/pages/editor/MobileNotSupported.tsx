@@ -1,24 +1,89 @@
+import { useNavigate } from "@tanstack/react-router";
+import { ArrowLeft, Monitor, Smartphone } from "lucide-react";
 import { SITE } from "@/data/site";
+import { Button } from "@/components/ui/button";
 
 export function MobileNotSupported() {
+  const nav = useNavigate();
+
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-background p-6 text-center">
-      <div className="max-w-md space-y-4 rounded-xl border bg-panel p-8 shadow-lg">
-        <div className="text-4xl">💻</div>
-        <h1 className="text-xl font-bold">Éditeur bureau uniquement</h1>
-        <p className="text-sm text-muted-foreground">
-          {SITE.tool} sur mobile arrive bientôt !
-          Pour profiter pleinement de l'expérience de glisser-déposer et créer vos pages, veuillez vous connecter sur un ordinateur.
-        </p>
-        <div className="pt-2">
-          <a
-            href="https://stafprint.com"
-            className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
+      {/* Header */}
+      <header className="flex h-14 shrink-0 items-center justify-between border-b bg-panel px-4">
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => nav({ to: "/" })}
+            title="Retour à l'accueil"
           >
-            Découvrir {SITE.name}
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+          <span className="font-semibold text-sm">{SITE.tool}</span>
+        </div>
+        <div className="flex items-center gap-1.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground">
+          <Smartphone className="h-3.5 w-3.5 text-amber-500" />
+          <span>Version Mobile</span>
+        </div>
+      </header>
+
+      {/* Contenu principal */}
+      <main className="flex flex-1 flex-col items-center justify-center p-6 text-center">
+        <div className="w-full max-w-md space-y-5 rounded-2xl border bg-panel p-6 shadow-xl">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <Monitor className="h-8 w-8" />
+          </div>
+
+          <div className="space-y-2">
+            <h1 className="text-xl font-bold tracking-tight">
+              Éditeur disponible sur ordinateur
+            </h1>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              L'éditeur de glisser-déposer de <span className="font-medium text-foreground">{SITE.tool}</span> requiert un écran plus large pour une expérience optimale.
+            </p>
+          </div>
+
+          <div className="rounded-lg bg-muted/40 p-3 text-xs text-muted-foreground">
+            📱 La version d'édition mobile arrive bientôt !
+          </div>
+
+          <div className="pt-2 flex flex-col gap-2">
+            <Button
+              className="w-full"
+              onClick={() => nav({ to: "/" })}
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Retourner à l'accueil
+            </Button>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="shrink-0 border-t bg-panel px-4 py-3 text-center text-[11px] text-muted-foreground space-y-1">
+        <div>
+          Besoin de visuels sur mesure ?{" "}
+          <a
+            href="https://brief.stafprint.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary hover:underline"
+          >
+            brief.stafprint.com
           </a>
         </div>
-      </div>
+        <div>
+          Outils images & couleurs :{" "}
+          <a
+            href="https://tools.stafprint.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary hover:underline"
+          >
+            tools.stafprint.com
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
