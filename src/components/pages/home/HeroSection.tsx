@@ -18,7 +18,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
         >
           <Layout className="h-3.5 w-3.5 text-primary" />
-          Le créateur de sites web de {SITE.name}
+          Le Site Maker de {SITE.name}
         </a>
 
         <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
