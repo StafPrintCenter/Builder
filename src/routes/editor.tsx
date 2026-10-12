@@ -1,11 +1,10 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
-import { DEVICES, type Device } from "@/components/DeviceSwitch";
-import { makeInstance, uid, type BlockInstance, type ProjectState } from "@/lib/builderRegistry";
+import { type Device } from "@/components/DeviceSwitch";
+import { makeInstance, type BlockInstance, type ProjectState } from "@/lib/builderRegistry";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { createProject, getProject, saveProject } from "@/lib/projects";
-import { CanvasBlock, DropLine, EditorHeader, Inspector, Library } from "@/components/pages/editor";
-import { MobileNotSupported } from "@/components/pages/editor/MobileNotSupported";
+import { CanvasArea, EditorHeader, Inspector, Library, MobileNotSupported } from "@/components/pages/editor";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEditorKeyboard } from "@/hooks/useEditorKeyboard";
 import { SITE } from "@/data/site";
@@ -15,7 +14,7 @@ const PAGE_DESC = `Glissez vos blocs, éditez vos textes et ajustez vos styles e
 
 export const Route = createFileRoute("/editor")({
   validateSearch: (s: Record<string, unknown>) => ({
-    id: typeof s['id'] === "string" ? s['id'] : undefined,
+    id: typeof s["id"] === "string" ? s["id"] : undefined,
   }),
   head: () => ({
     meta: [
@@ -32,6 +31,7 @@ function Editor() {
   const isMobile = useIsMobile();
   const { id } = Route.useSearch();
   const nav = useNavigate();
+
   const [project, setProject] = useState<ProjectState | null>(null);
   const [past, setPast] = useState<BlockInstance[][]>([]);
   const [future, setFuture] = useState<BlockInstance[][]>([]);
@@ -91,13 +91,9 @@ function Editor() {
     });
   }, [project]);
 
-  // Gestion des raccourcis clavier externalisée
   useEditorKeyboard({ undo, redo });
 
-  // Si l'écran est considéré comme mobile, on affiche le message dédié
-  if (isMobile) {
-    return <MobileNotSupported />;
-  }
+  if (isMobile) return <MobileNotSupported />;
 
   if (!project)
     return <div className="grid h-screen place-items-center text-muted-foreground">Chargement…</div>;
@@ -149,7 +145,6 @@ function Editor() {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden">
-      {/* Top bar */}
       <EditorHeader
         project={project}
         saved={saved}
@@ -163,7 +158,6 @@ function Editor() {
       />
 
       <div className="flex min-h-0 flex-1">
-        {/* Bibliothèque à gauche */}
         <Library
           onAdd={(bid) => {
             const inst = makeInstance(bid);
@@ -172,60 +166,19 @@ function Editor() {
           }}
         />
 
-        {/* Canevas principal */}
-        <main className="grid-bg flex-1 overflow-auto bg-background p-6" onClick={() => setSelected(null)}>
-          <div
-            className="spc-canvas @container mx-auto min-h-[60vh] bg-canvas shadow-2xl transition-[width] duration-300"
-            style={{ width: DEVICES[device], maxWidth: "100%" }}
-            onDragOver={(e) => {
-              e.preventDefault();
-              if (!project.blocks.length) setDropIndex(0);
-            }}
-            onDragLeave={(e) => {
-              if (!e.currentTarget.contains(e.relatedTarget as Node)) setDropIndex(null);
-            }}
-            onDrop={onDrop}
-          >
-            {project.blocks.length === 0 && (
-              <div
-                className={`grid h-[60vh] place-items-center border-2 border-dashed text-sm text-muted-foreground ${dropIndex !== null ? "border-primary" : "border-muted-foreground/30"
-                  }`}
-              >
-                Glissez un bloc ici depuis la bibliothèque
-              </div>
-            )}
-            {project.blocks.map((b, i) => (
-              <div key={b.instanceId}>
-                {dropIndex === i && <DropLine />}
-                <CanvasBlock
-                  inst={b}
-                  index={i}
-                  total={project.blocks.length}
-                  device={device}
-                  selected={selected === b.instanceId}
-                  onSelect={() => setSelected(b.instanceId)}
-                  onField={(k, v) => updateField(b.instanceId, k, v)}
-                  onDragOverHalf={(after) => setDropIndex(after ? i + 1 : i)}
-                  onUp={() => move(i, -1)}
-                  onDown={() => move(i, 1)}
-                  onDuplicate={() =>
-                    commit((bs) => {
-                      const n = [...bs];
-                      n.splice(i + 1, 0, {
-                        ...b,
-                        instanceId: uid(),
-                        customContent: { ...b.customContent },
-                      });
-                      return n;
-                    })
-                  }
-                  onDelete={() => setToDelete(b.instanceId)}
-                />
-              </div>
-            ))}
-            {dropIndex === project.blocks.length && project.blocks.length > 0 && <DropLine />}
-          </div>
-        </main>
+        <CanvasArea
+          blocks={project.blocks}
+          device={device}
+          selected={selected}
+          dropIndex={dropIndex}
+          setDropIndex={setDropIndex}
+          setSelected={setSelected}
+          setToDelete={setToDelete}
+          commit={commit}
+          updateField={updateField}
+          move={move}
+          onDrop={onDrop}
+        />
 
         <ConfirmDialog
           open={!!toDelete}
@@ -240,11 +193,9 @@ function Editor() {
           }}
         />
 
-        {/* Inspecteur à droite */}
         <Inspector inst={sel} onChange={(k, v) => sel && updateField(sel.instanceId, k, v)} />
       </div>
 
-      {/* Footer */}
       <div className="shrink-0 border-t bg-panel px-4 py-1.5 text-center text-[11px] text-muted-foreground">
         Besoin de visuels sur mesure ?{" "}
         <a
