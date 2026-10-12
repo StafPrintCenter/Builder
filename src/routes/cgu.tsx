@@ -65,9 +65,6 @@ function Cgu() {
           <p>
             Le Service est accessible à toute personne disposant d'une connexion internet et d'un navigateur compatible. L'accès à certaines fonctionnalités (enregistrement des projets, notamment) peut nécessiter la création d'un compte utilisateur.
           </p>
-          <p>
-            L'Utilisateur est responsable de la confidentialité de ses identifiants et de l'ensemble des activités effectuées depuis son compte. Il s'engage à fournir des informations exactes lors de la création de son compte et à signaler sans délai tout accès non autorisé.
-          </p>
         </Section>
 
         <Section title="4. Engagements de l'Utilisateur">
@@ -79,44 +76,31 @@ function Cgu() {
             <li>revendre ou exploiter commercialement le Service sans autorisation écrite préalable de l'Éditeur.</li>
           </ul>
           <p>
-            L'Utilisateur garantit détenir les droits nécessaires sur l'ensemble des contenus
-            (textes, images, logos, coordonnées, prix) qu'il intègre dans ses pages.
+            L'Utilisateur garantit détenir les droits nécessaires sur l'ensemble des contenus (textes, images, logos, coordonnées, prix) qu'il intègre dans ses pages.
           </p>
         </Section>
 
         <Section title="5. Contenus créés par l'Utilisateur">
           <p>
-            L'Utilisateur conserve l'intégralité de ses droits sur les contenus qu'il crée ou
-            importe dans le Service. Il concède à l'Éditeur la licence non exclusive limitée au
-            stockage technique, à l'affichage et à la mise en œuvre du Service (par exemple la
-            prévisualisation et l'export des pages).
+            L'Utilisateur conserve l'intégralité de ses droits sur les contenus qu'il crée ou importe dans le Service. Il concède à l'Éditeur la licence non exclusive limitée au stockage technique, à l'affichage et à la mise en œuvre du Service (par exemple la prévisualisation et l'export des pages).
           </p>
           <p>
-            L'Éditeur ne contrôle pas les contenus créés par les Utilisateurs et ne peut en
-            garantir l'exactitude, la licéité ou la qualité. Tout signalement de contenu
-            manifestement illicite peut être adressé aux coordonnées de contact ci-dessous ; le
-            Service se réserve alors le droit de retirer le contenu concerné.
+            L'Éditeur ne contrôle pas les contenus créés par les Utilisateurs et ne peut en garantir l'exactitude, la licéité ou la qualité. Tout signalement de contenu manifestement illicite peut être adressé aux coordonnées de contact ci-dessous ; le Service se réserve alors le droit de retirer le contenu concerné.
           </p>
         </Section>
 
         <Section title="6. Propriété intellectuelle">
           <p>
-            L'ensemble des éléments constitutifs du Service (logiciel, interface, modèles, blocs,
-            graphismes, textes, marque « {SITE.tool} ») est la propriété exclusive de
-            l'Éditeur ou de ses partenaires et est protégé par le droit de la propriété
-            intellectuelle.
+            L'ensemble des éléments constitutifs du Service (logiciel, interface, modèles, blocs, graphismes, textes, marque « <strong>{SITE.tool}</strong> ») est la propriété exclusive de l'Éditeur ou de ses partenaires et est protégé par le droit de la propriété intellectuelle.
           </p>
           <p>
-            Toute reproduction, représentation ou exploitation du Service hors du cadre prévu
-            par les présentes CGU est interdite sans autorisation écrite préalable.
+            Toute reproduction, représentation ou exploitation du Service hors du cadre prévu par les présentes CGU est interdite sans autorisation écrite préalable.
           </p>
         </Section>
 
         <Section title="7. Tarifs et paiement">
           <p>
-            L'accès au Service peut être proposé à titre gratuit ou payant, selon la formule
-            choisie. Les tarifs applicables, exprimés en francs CFA (FCFA), sont indiqués sur
-            l'interface du Service au moment de la souscription.
+            L'accès au Service peut être proposé à titre gratuit ou payant, selon la formule choisie. Les tarifs applicables, exprimés en francs CFA (FCFA), sont indiqués sur l'interface du Service au moment de la souscription.
           </p>
           <p>
             Le paiement est exigible à la commande. Toute somme versée au titre d'une formule
