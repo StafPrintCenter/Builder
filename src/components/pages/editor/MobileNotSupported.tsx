@@ -1,8 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, Monitor, Smartphone } from "lucide-react";
-import { SITE } from "@/data/site";
+import { SITE, SITE_LINK } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { SpcDeskLogo, ThemeToggle } from "@/components/site";
+import { stripProtocol } from "@/lib/domain";
 
 export function MobileNotSupported() {
   const nav = useNavigate();
@@ -61,23 +62,23 @@ export function MobileNotSupported() {
         <div>
           Besoin de visuels sur mesure ?{" "}
           <a
-            href="https://brief.stafprint.com"
+            href={SITE_LINK.briefUrl}
             target="_blank"
             rel="noreferrer"
             className="text-primary hover:underline"
           >
-            brief.stafprint.com
+            {stripProtocol(SITE_LINK.briefUrl)}
           </a>
         </div>
         <div>
           Outils images & couleurs :{" "}
           <a
-            href="https://tools.stafprint.com"
+            href={SITE_LINK.toolkitUrl}
             target="_blank"
             rel="noreferrer"
             className="text-primary hover:underline"
           >
-            tools.stafprint.com
+            {stripProtocol(SITE_LINK.toolkitUrl)}
           </a>
         </div>
       </footer>
