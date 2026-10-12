@@ -107,13 +107,7 @@ function Cgu() {
           </p>
         </Section>
 
-        <Section title="11. Données personnelles">
-          <p>
-            Les données personnelles collectées dans le cadre du Service sont traitées conformément à la législation applicable en matière de protection des données. L'Utilisateur dispose de droits d'accès, de rectification, d'opposition et de suppression qu'il peut exercer aux coordonnées de contact ci-dessous.
-          </p>
-        </Section>
-
-        <Section title="12. Modification des CGU">
+        <Section title="8. Modification des CGU">
           <p>
             L'Éditeur peut modifier les présentes CGU à tout moment. La version applicable est celle en vigueur et accessible en ligne à la date d'utilisation du Service. Les utilisateurs seront informés de toute modification substantielle via l'interface du Service.
           </p>
@@ -121,21 +115,16 @@ function Cgu() {
 
         <Section title="13. Droit applicable et litiges">
           <p>
-            Les présentes CGU sont soumises au droit béninois. En cas de différend, les parties
-            s'efforceront de trouver une solution amiable. À défaut, le litige sera porté devant
-            les juridictions compétentes du siège de l'Éditeur.
+            Les présentes CGU sont soumises au droit béninois. En cas de différend, les parties s'efforceront de trouver une solution amiable. À défaut, le litige sera porté devant les juridictions compétentes du siège de l'Éditeur.
           </p>
         </Section>
 
         <Section title="14. Contact">
           <p>
-            Éditeur : {SITE.name} - [adresse complète à compléter], Bénin.
+            Éditeur : {SITE.name} - {SITE.city}.
           </p>
           <p>
-            Contact : [adresse e-mail à compléter] · [numéro de téléphone à compléter].
-          </p>
-          <p>
-            RCCM / IFU : [numéros d'immatriculation à compléter].
+            Contact : {SITE.email} · {SITE.whatsapp}.
           </p>
         </Section>
       </main>
