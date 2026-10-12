@@ -40,9 +40,7 @@ function Cgu() {
 
         <Section title="1. Objet">
           <p>
-            Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») définissent les
-            modalités d'accès et d'utilisation de SPC Site Builder (ci-après « le Service »), un
-            constructeur visuel de sites et landing pages édité par STAF PRINT CENTER
+            Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») définissent les modalités d'accès et d'utilisation de SPC Site Builder (ci-après « le Service »), un constructeur visuel de sites et landing pages édité par {SITE.name}
             (ci-après « l'Éditeur »).
           </p>
           <p>
@@ -61,9 +59,7 @@ function Cgu() {
             <li>enregistrer et gérer ses projets.</li>
           </ul>
           <p>
-            Le Service est accessible depuis un navigateur web. Certaines fonctionnalités peuvent
-            évoluer : l'Éditeur se réserve le droit d'ajouter, modifier ou retirer des
-            fonctionnalités.
+            Le Service est accessible depuis un navigateur web.
           </p>
         </Section>
 
@@ -200,7 +196,7 @@ function Cgu() {
 
         <Section title="14. Contact">
           <p>
-            Éditeur : STAF PRINT CENTER - [adresse complète à compléter], Bénin.
+            Éditeur : {SITE.name} - [adresse complète à compléter], Bénin.
           </p>
           <p>
             Contact : [adresse e-mail à compléter] · [numéro de téléphone à compléter].
