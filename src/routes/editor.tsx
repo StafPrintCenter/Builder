@@ -5,6 +5,9 @@ import { makeInstance, uid, type BlockInstance, type ProjectState } from "@/lib/
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { createProject, getProject, saveProject } from "@/lib/projects";
 import { CanvasBlock, DropLine, EditorHeader, Inspector, Library } from "@/components/pages/editor";
+import { MobileNotSupported } from "@/components/pages/editor/MobileNotSupported";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useEditorKeyboard } from "@/hooks/useEditorKeyboard";
 import { SITE } from "@/data/site";
 
 const PAGE_TITLE = `Éditeur - ${SITE.tool} | ${SITE.name}`;
@@ -26,6 +29,7 @@ export const Route = createFileRoute("/editor")({
 });
 
 function Editor() {
+  const isMobile = useIsMobile();
   const { id } = Route.useSearch();
   const nav = useNavigate();
   const [project, setProject] = useState<ProjectState | null>(null);
@@ -87,25 +91,13 @@ function Editor() {
     });
   }, [project]);
 
-  useEffect(() => {
-    const k = (e: KeyboardEvent) => {
-      if (
-        (e.target as HTMLElement)?.isContentEditable ||
-        ["INPUT", "TEXTAREA"].includes((e.target as HTMLElement)?.tagName)
-      )
-        return;
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "z") {
-        e.preventDefault();
-        e.shiftKey ? redo() : undo();
-      }
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "y") {
-        e.preventDefault();
-        redo();
-      }
-    };
-    window.addEventListener("keydown", k);
-    return () => window.removeEventListener("keydown", k);
-  }, [undo, redo]);
+  // Gestion des raccourcis clavier externalisée
+  useEditorKeyboard({ undo, redo });
+
+  // Si l'écran est considéré comme mobile, on affiche le message dédié
+  if (isMobile) {
+    return <MobileNotSupported />;
+  }
 
   if (!project)
     return <div className="grid h-screen place-items-center text-muted-foreground">Chargement…</div>;
