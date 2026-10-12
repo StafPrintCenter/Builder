@@ -1,23 +1,26 @@
+import { SITE, SITE_LINK } from "@/data/site";
+import { stripProtocol } from "@/lib/domain";
+
 export function EditorFooter() {
   return (
     <footer className="shrink-0 border-t bg-panel px-4 py-1.5 text-center text-[11px] text-muted-foreground">
       Besoin de visuels sur mesure ?{" "}
       <a
-        href="https://brief.stafprint.com"
+        href={SITE_LINK.briefUrl}
         target="_blank"
         rel="noreferrer"
         className="text-primary hover:underline"
       >
-        brief.stafprint.com
+        {stripProtocol(SITE_LINK.briefUrl)}
       </a>
       {" · "}Outils images & couleurs :{" "}
       <a
-        href="https://tools.stafprint.com"
+        href={SITE_LINK.toolkitUrl}
         target="_blank"
         rel="noreferrer"
         className="text-primary hover:underline"
       >
-        tools.stafprint.com
+        {stripProtocol(SITE_LINK.toolkitUrl)}
       </a>
     </footer>
   );
