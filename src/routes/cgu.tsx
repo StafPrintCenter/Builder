@@ -1,13 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BuilderShell } from "@/components/site";
+import { SITE, SITE_LINK } from "@/data/site";
+import { stripProtocol } from "@/lib/domain";
+
+const PAGE_TITLE = `"Conditions Générales d'Utilisation - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Conditions Générales d'Utilisation de ${SITE.tool}, service édité par ${SITE.name}.`;
 
 export const Route = createFileRoute("/cgu")({
   head: () => ({
     meta: [
-      { title: "Conditions Générales d'Utilisation - SPC Site Builder" },
-      { name: "description", content: "Conditions Générales d'Utilisation de SPC Site Builder, service édité par STAF PRINT CENTER." },
-      { property: "og:title", content: "Conditions Générales d'Utilisation - SPC Site Builder" },
-      { property: "og:description", content: "Conditions d'utilisation de la plateforme SPC Site Builder." },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: Cgu,
@@ -25,8 +30,10 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Cgu() {
   return (
     <BuilderShell>
-      <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-12">
-        <h1 className="text-3xl font-bold text-foreground">Conditions Générales d'Utilisation</h1>
+      <main className="mx-auto w-full max-w-3xl flex-1 px-6">
+        <h1 className="text-3xl font-bold text-foreground">
+          Conditions Générales d'Utilisation
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Dernière mise à jour : 3 octobre 2026
         </p>
