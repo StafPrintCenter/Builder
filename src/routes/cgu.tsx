@@ -113,13 +113,13 @@ function Cgu() {
           </p>
         </Section>
 
-        <Section title="13. Droit applicable et litiges">
+        <Section title="9. Droit applicable et litiges">
           <p>
             Les présentes CGU sont soumises au droit béninois. En cas de différend, les parties s'efforceront de trouver une solution amiable. À défaut, le litige sera porté devant les juridictions compétentes du siège de l'Éditeur.
           </p>
         </Section>
 
-        <Section title="14. Contact">
+        <Section title="10. Contact">
           <p>
             Éditeur : {SITE.name} - {SITE.city}.
           </p>
