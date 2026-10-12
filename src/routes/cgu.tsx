@@ -40,17 +40,15 @@ function Cgu() {
 
         <Section title="1. Objet">
           <p>
-            Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») définissent les modalités d'accès et d'utilisation de SPC Site Builder (ci-après « le Service »), un constructeur visuel de sites et landing pages édité par {SITE.name}
-            (ci-après « l'Éditeur »).
+            Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») définissent les modalités d'accès et d'utilisation de {SITE.tool} (ci-après « le Service »), un constructeur visuel de sites et landing pages édité par {SITE.name} (ci-après « l'Éditeur »).
           </p>
           <p>
-            L'utilisation du Service implique l'acceptation sans réserve des présentes CGU. Si
-            vous n'acceptez pas ces conditions, vous ne devez pas utiliser le Service.
+            L'utilisation du Service implique l'acceptation sans réserve des présentes CGU. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le Service.
           </p>
         </Section>
 
         <Section title="2. Description du Service">
-          <p>SPC Site Builder permet notamment de :</p>
+          <p>{SITE.tool} permet notamment de :</p>
           <ul className="list-disc space-y-1 pl-5">
             <li>créer des sites et landing pages à l'aide d'un éditeur visuel à blocs ;</li>
             <li>prévisualiser les pages créées sur différents formats d'écran ;</li>
@@ -65,15 +63,10 @@ function Cgu() {
 
         <Section title="3. Accès au Service">
           <p>
-            Le Service est accessible à toute personne disposant d'une connexion internet et d'un
-            navigateur compatible. L'accès à certaines fonctionnalités (enregistrement des
-            projets, notamment) peut nécessiter la création d'un compte utilisateur.
+            Le Service est accessible à toute personne disposant d'une connexion internet et d'un navigateur compatible. L'accès à certaines fonctionnalités (enregistrement des projets, notamment) peut nécessiter la création d'un compte utilisateur.
           </p>
           <p>
-            L'Utilisateur est responsable de la confidentialité de ses identifiants et de
-            l'ensemble des activités effectuées depuis son compte. Il s'engage à fournir des
-            informations exactes lors de la création de son compte et à signaler sans délai tout
-            accès non autorisé.
+            L'Utilisateur est responsable de la confidentialité de ses identifiants et de l'ensemble des activités effectuées depuis son compte. Il s'engage à fournir des informations exactes lors de la création de son compte et à signaler sans délai tout accès non autorisé.
           </p>
         </Section>
 
@@ -109,7 +102,7 @@ function Cgu() {
         <Section title="6. Propriété intellectuelle">
           <p>
             L'ensemble des éléments constitutifs du Service (logiciel, interface, modèles, blocs,
-            graphismes, textes, marque « SPC Site Builder ») est la propriété exclusive de
+            graphismes, textes, marque « {SITE.tool} ») est la propriété exclusive de
             l'Éditeur ou de ses partenaires et est protégé par le droit de la propriété
             intellectuelle.
           </p>
