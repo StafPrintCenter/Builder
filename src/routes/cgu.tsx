@@ -98,68 +98,24 @@ function Cgu() {
           </p>
         </Section>
 
-        <Section title="7. Tarifs et paiement">
+        <Section title="7. Disponibilité et responsabilité">
           <p>
-            L'accès au Service peut être proposé à titre gratuit ou payant, selon la formule choisie. Les tarifs applicables, exprimés en francs CFA (FCFA), sont indiqués sur l'interface du Service au moment de la souscription.
+            L'Éditeur s'efforce d'assurer un accès continu au Service, sans obligation de résultat. Des interruptions pour maintenance, évolution ou événement indépendant de la volonté de l'Éditeur sont possibles.
           </p>
           <p>
-            Le paiement est exigible à la commande. Toute somme versée au titre d'une formule
-            entamée reste acquise à l'Éditeur, sauf disposition légale contraire.
-          </p>
-        </Section>
-
-        <Section title="8. Durée et résiliation">
-          <p>
-            Les présentes CGU sont conclues pour une durée indéterminée à compter de la première
-            utilisation du Service.
-          </p>
-          <p>
-            L'Utilisateur peut cesser d'utiliser le Service à tout moment et demander la
-            suppression de son compte et de ses projets. L'Éditeur peut, en cas de manquement
-            grave aux présentes CGU, suspendre ou résilier l'accès au Service après notification
-            restée sans effet.
-          </p>
-        </Section>
-
-        <Section title="9. Disponibilité et responsabilité">
-          <p>
-            L'Éditeur s'efforce d'assurer un accès continu au Service, sans obligation de
-            résultat. Des interruptions pour maintenance, évolution ou événement indépendant de
-            la volonté de l'Éditeur sont possibles.
-          </p>
-          <p>
-            L'Éditeur ne saurait être tenu responsable des dommages indirects (perte de données,
-            perte d'exploitation ou de chiffre d'affaires) résultant de l'utilisation du Service.
-            Il est recommandé à l'Utilisateur de conserver une copie de ses contenus et de
-            procéder régulièrement à l'export de ses pages. En tout état de cause, la
-            responsabilité de l'Éditeur est limitée aux sommes effectivement versées par
-            l'Utilisateur au titre du Service au cours des douze derniers mois.
-          </p>
-        </Section>
-
-        <Section title="10. Liens externes">
-          <p>
-            Le Service peut renvoyer vers des sites tiers (notamment
-            brief.stafprint.com et tools.stafprint.com). L'Éditeur n'exerce aucun contrôle sur
-            ces sites et décline toute responsabilité quant à leurs contenus ou pratiques.
+            L'Éditeur ne saurait être tenu responsable des dommages indirects (perte de données, perte d'exploitation ou de chiffre d'affaires) résultant de l'utilisation du Service. Il est recommandé à l'Utilisateur de conserver une copie de ses contenus et de procéder régulièrement à l'export de ses pages. En tout état de cause, la responsabilité de l'Éditeur est limitée aux sommes effectivement versées par l'Utilisateur au titre du Service au cours des douze derniers mois.
           </p>
         </Section>
 
         <Section title="11. Données personnelles">
           <p>
-            Les données personnelles collectées dans le cadre du Service sont traitées
-            conformément à la législation applicable en matière de protection des données.
-            L'Utilisateur dispose de droits d'accès, de rectification, d'opposition et de
-            suppression qu'il peut exercer aux coordonnées de contact ci-dessous.
+            Les données personnelles collectées dans le cadre du Service sont traitées conformément à la législation applicable en matière de protection des données. L'Utilisateur dispose de droits d'accès, de rectification, d'opposition et de suppression qu'il peut exercer aux coordonnées de contact ci-dessous.
           </p>
         </Section>
 
         <Section title="12. Modification des CGU">
           <p>
-            L'Éditeur peut modifier les présentes CGU à tout moment. La version applicable est
-            celle en vigueur et accessible en ligne à la date d'utilisation du Service. Les
-            utilisateurs seront informés de toute modification substantielle via l'interface du
-            Service.
+            L'Éditeur peut modifier les présentes CGU à tout moment. La version applicable est celle en vigueur et accessible en ligne à la date d'utilisation du Service. Les utilisateurs seront informés de toute modification substantielle via l'interface du Service.
           </p>
         </Section>
 
