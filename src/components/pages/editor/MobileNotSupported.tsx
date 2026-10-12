@@ -7,7 +7,8 @@ export function MobileNotSupported() {
         <div className="text-4xl">💻</div>
         <h1 className="text-xl font-bold">Éditeur bureau uniquement</h1>
         <p className="text-sm text-muted-foreground">
-          {SITE.tool} sur mobile arrive bientôt ! Pour profiter pleinement de l'expérience de glisser-déposer et créer vos pages, veuillez vous connecter sur un ordinateur.
+          {SITE.tool} sur mobile arrive bientôt !
+          Pour profiter pleinement de l'expérience de glisser-déposer et créer vos pages, veuillez vous connecter sur un ordinateur.
         </p>
         <div className="pt-2">
           <a
