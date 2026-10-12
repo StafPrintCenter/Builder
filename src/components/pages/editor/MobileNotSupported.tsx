@@ -2,7 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, Monitor, Smartphone } from "lucide-react";
 import { SITE } from "@/data/site";
 import { Button } from "@/components/ui/button";
-import { SpcDeskLogo } from "@/components/site";
+import { SpcDeskLogo, ThemeToggle } from "@/components/site";
 
 export function MobileNotSupported() {
   const nav = useNavigate();
@@ -14,10 +14,14 @@ export function MobileNotSupported() {
         <div className="flex items-center gap-2">
           <SpcDeskLogo className="h-9 w-auto sm:h-10" />
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground">
-          <Smartphone className="h-3.5 w-3.5 text-amber-500" />
-          <span>Version Mobile</span>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <div className="flex items-center gap-1.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground">
+            <Smartphone className="h-3.5 w-3.5 text-amber-500" />
+            <span>Version Mobile</span>
+          </div>
         </div>
+
       </header>
 
       {/* Contenu principal */}
